@@ -1084,7 +1084,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','');</script>
 <!-- End Google Tag Manager -->
 
-</head>
+<style id="blinc-hero-fix">#nav-home div.se-img,[data-img="nav-home_1"],[data-img="pop-out-nav_0"]{background-image:url("hero-cover.jpg")!important;background-size:cover!important;background-position:center center!important;}</style></head>
 <body class="home wp-singular page-template-default page page-id-15453 wp-embed-responsive wp-theme-showit wp-child-theme-showit">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id="
@@ -2653,14 +2653,22 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
       if(href.indexOf("sloans.com.au")>-1){ a.href="https://blincblonde.com/"; }
     });
   }
-  function applyLight(){ setText(); relabel(); setEmbeds(); swapLogos(); fixLinks(); swapImages(); }
-  function applyOnce(){ applyLight(); remapColours(); }
+  function applyStatic(){ setText(); relabel(); setEmbeds(); swapLogos(); fixLinks(); }
+  function applyOnce(){ applyStatic(); swapImages(); remapColours(); }
   function boot(){
-    applyLight();
-    var n=0, iv=setInterval(function(){ applyLight(); n++; if(n>=24){clearInterval(iv);} },600);
-    [200,800,2000,4000,7000].forEach(function(t){ setTimeout(remapColours,t); });
-    window.addEventListener("scroll", function(){ applyLight(); }, {passive:true});
-    var deb; new MutationObserver(function(){ clearTimeout(deb); deb=setTimeout(swapImages,100); }).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:["style","src","data-src","class"]});
+    applyOnce();
+    // Run the stable rebrand a handful of times right after load, then STOP.
+    // No work on scroll -> animations stay smooth.
+    [150,500,1200,2500,4500].forEach(function(t){ setTimeout(applyOnce,t); });
+    // Lazy-loaded images are the only thing that appears later. Catch them with a
+    // throttled observer (max ~1 cheap pass / 400ms), not per-scroll.
+    var last=0, pending=false;
+    var obs=new MutationObserver(function(){
+      if(pending) return; var now=Date.now();
+      if(now-last<400){ pending=true; setTimeout(function(){ pending=false; last=Date.now(); swapImages(); }, 400-(now-last)); return; }
+      last=now; swapImages();
+    });
+    obs.observe(document.body,{subtree:true,attributes:true,attributeFilter:["style","src","data-src"]});
   }
   if(document.readyState!=="loading") boot(); else document.addEventListener("DOMContentLoaded",boot);
   window.addEventListener("load", applyOnce);
