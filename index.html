@@ -98,10 +98,10 @@ p,h1,h2,h3{margin:0}
 .week .head{display:flex;align-items:center;gap:0;position:relative}
 .week .star{width:clamp(60px,7vw,92px);height:auto;margin-right:-18px;flex:none}
 .week h2{font-size:clamp(1.3rem,2.5vw,2rem);position:relative}
-.strip{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(8px,2.4vw,40px);margin-top:clamp(28px,4vw,48px)}
-.track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 2*clamp(14px,3vw,48px))/3);gap:clamp(14px,3vw,48px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;min-width:0}
+.strip{display:grid;grid-template-columns:1fr;align-items:center;gap:clamp(8px,2.4vw,40px);margin-top:clamp(28px,4vw,48px)}
+.track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 3*clamp(14px,2.4vw,36px))/4);gap:clamp(14px,2.4vw,36px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;min-width:0}
 .track::-webkit-scrollbar{display:none}
-@media (max-width:700px){.track{grid-auto-columns:78%}.strip{grid-template-columns:1fr}.strip .circ{display:none}}
+@media (max-width:700px){.track{grid-auto-columns:78%}}
 .tile{scroll-snap-align:start;display:grid;gap:12px;text-decoration:none}
 .tile figure{margin:0;background:var(--swatch);aspect-ratio:1/.98;display:grid;place-items:center;overflow:hidden}
 .tile figure img{width:52%;height:84%;object-fit:cover;box-shadow:0 18px 30px -18px rgba(0,0,0,.45)}
@@ -149,7 +149,6 @@ footer a{text-underline-offset:3px}
       <h1 class="h">Perth's blonde specialists</h1>
       <p class="sub">Choose your blonde with us</p>
       <div class="act">
-        <a class="circ" href="quote.html" aria-label="Price my blonde"><svg viewBox="0 0 30 12" aria-hidden="true"><path d="M0 6h28M23 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></a>
         <a class="lbtn" href="https://home.shortcutssoftware.com/blincblonde#/_h/locations/info" target="_blank" rel="noopener">Book now</a>
       </div>
       <p class="small-caps">Balayage, baby lights and bright blonde on Beaufort Street, Mt Lawley. Exclusively Aveda, with the health of your hair planned into every colour.</p>
@@ -205,11 +204,9 @@ footer a{text-underline-offset:3px}
   <section class="week" aria-label="Blondes of the week">
     <div class="wrap">
       <div class="head">
-        <svg class="star" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 4 L57 40 L94 26 L64 52 L90 86 L52 64 L36 98 L38 60 L4 62 L36 44 Z" fill="none" stroke="#111" stroke-width="1.1" stroke-linejoin="round"/></svg>
         <h2 class="h">Blondes of the week</h2>
       </div>
       <div class="strip">
-        <button class="circ l" type="button" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 30 12" aria-hidden="true"><path d="M0 6h28M23 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
         <div class="track" id="track">
           <a class="tile" href="https://www.instagram.com/blincblonde/" target="_blank" rel="noopener">
             <figure><img src="img/hero.jpg" alt="Lived-in balayage" style="object-position:40% 40%"></figure>
@@ -232,7 +229,6 @@ footer a{text-underline-offset:3px}
             <span class="price">From $119</span>
           </a>
         </div>
-        <button class="circ" type="button" data-dir="1" aria-label="Next"><svg viewBox="0 0 30 12" aria-hidden="true"><path d="M0 6h28M23 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
       </div>
     </div>
   </section>
