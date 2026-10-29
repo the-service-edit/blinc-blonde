@@ -107,17 +107,19 @@ p,h1,h2,h3{margin:0}
 .tile .small-caps{max-width:26ch}
 .tile .price{font-size:.72rem}
 
-/* reviews */
-.reviews{padding-block:clamp(72px,9vw,130px)}
-.rv-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:14px 30px}
-.rv-head h2{font-size:clamp(1.9rem,3.6vw,2.8rem)}
-.rv-score{font-size:.82rem;text-transform:uppercase}
-.rv-stars{letter-spacing:.12em;margin-right:8px}
-.rv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:clamp(14px,2vw,24px);margin-top:clamp(36px,5vw,64px)}
-.rv{margin:0;background:var(--mist);padding:clamp(22px,2.4vw,32px);display:grid;grid-template-rows:1fr auto;gap:22px}
-.rv blockquote{margin:0;font-size:1.02rem;line-height:1.45}
-.rv figcaption{font-size:.72rem;text-transform:uppercase;font-weight:600}
-.rv-more{display:inline-block;margin-top:clamp(28px,4vw,44px);font-weight:700;font-size:.82rem;text-transform:uppercase;text-underline-offset:3px}
+/* reviews: one editorial pull quote at a time */
+.reviews{padding-block:clamp(80px,11vw,160px);text-align:center}
+.rv-in{display:grid;justify-items:center;gap:clamp(22px,3vw,34px)}
+.rv-score{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em}
+.rv-stage{display:grid;width:100%;max-width:980px}
+.rv{grid-area:1/1;margin:0;display:grid;gap:clamp(18px,2.4vw,28px);justify-items:center;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s}
+.rv.on{opacity:1;visibility:visible}
+.rv blockquote{margin:0;font-family:var(--wordmark);font-weight:500;font-size:clamp(1.7rem,3.6vw,3.1rem);line-height:1.15;text-wrap:balance}
+.rv figcaption{font-size:.74rem;text-transform:uppercase;font-weight:600;letter-spacing:.08em}
+.rv-nav{display:flex;gap:10px}
+.rv-dot{width:8px;height:8px;border-radius:50%;border:1px solid var(--ink);background:none;padding:0;cursor:pointer}
+.rv-dot.on{background:var(--ink)}
+.rv-more{font-weight:700;font-size:.78rem;text-transform:uppercase;text-underline-offset:3px}
 
 /* menu on the tray */
 .menu{background:var(--tray);display:grid;place-items:center;padding-block:clamp(40px,6vw,80px);position:relative;overflow:hidden}
@@ -248,30 +250,32 @@ footer a{text-underline-offset:3px}
     </div>
   </section>
 
-  <section class="reviews wrap" id="reviews" aria-label="Google reviews">
-    <div class="rv-head">
-      <h2 class="h">What our blondes say</h2>
-      <p class="rv-score"><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.7 from 100 Google reviews</p>
+  <section class="reviews" id="reviews" aria-label="Google reviews">
+    <div class="wrap rv-in">
+      <p class="rv-score"><span aria-hidden="true">★★★★★</span>&nbsp; 4.7 on Google</p>
+      <div class="rv-stage" id="rv" aria-live="polite">
+        <figure class="rv on">
+          <blockquote>“1st visit and already much blonder than I was getting at my old salon… Hair feels soft, in great condition and shiny.”</blockquote>
+          <figcaption>Danielle P.</figcaption>
+        </figure>
+        <figure class="rv">
+          <blockquote>“My hair is naturally jet black… she did a wonderful job bringing the perfect shade of blonde in my hair!”</blockquote>
+          <figcaption>Su</figcaption>
+        </figure>
+        <figure class="rv">
+          <blockquote>“The colour always comes out the perfect combination of cool without looking grey!”</blockquote>
+          <figcaption>Amber T.</figcaption>
+        </figure>
+        <figure class="rv">
+          <blockquote>“Finding someone who can manage blond, finer hair has always been a challenge. Brendan and team are extremely skilled, professional, and attentive.”</blockquote>
+          <figcaption>Nynne T.</figcaption>
+        </figure>
+      </div>
+      <div class="rv-nav">
+        <button type="button" class="rv-dot on" aria-label="Review 1"></button><button type="button" class="rv-dot" aria-label="Review 2"></button><button type="button" class="rv-dot" aria-label="Review 3"></button><button type="button" class="rv-dot" aria-label="Review 4"></button>
+      </div>
+      <a class="rv-more" href="https://share.google/gpd9A7HayQjGqEX2p" target="_blank" rel="noopener">Read all 100 reviews</a>
     </div>
-    <div class="rv-grid">
-      <figure class="rv">
-        <blockquote>“1st visit and already much blonder than I was getting at my old salon after multiple visits of asking and them getting it wrong… Hair feels soft, in great condition and shiny.”</blockquote>
-        <figcaption>Danielle P.</figcaption>
-      </figure>
-      <figure class="rv">
-        <blockquote>“My hair is naturally jet black so my roots were super dark… she did a wonderful job bringing the perfect shade of blonde in my hair!”</blockquote>
-        <figcaption>Su</figcaption>
-      </figure>
-      <figure class="rv">
-        <blockquote>“The colour always comes out the perfect combination of cool without looking grey!”</blockquote>
-        <figcaption>Amber T.</figcaption>
-      </figure>
-      <figure class="rv">
-        <blockquote>“Finding someone who can manage blond, finer hair has always been a challenge. Brendan and team are extremely skilled, professional, and attentive.”</blockquote>
-        <figcaption>Nynne T.</figcaption>
-      </figure>
-    </div>
-    <a class="rv-more" href="https://share.google/gpd9A7HayQjGqEX2p" target="_blank" rel="noopener">Read all reviews on Google</a>
   </section>
 
   <section class="menu" id="menu" aria-label="Blinc menu">
@@ -326,6 +330,11 @@ footer a{text-underline-offset:3px}
     var step=t.firstElementChild.getBoundingClientRect().width+parseFloat(getComputedStyle(t).columnGap||0);
     t.scrollBy({left:step*Number(b.dataset.dir),behavior:'smooth'});
   })});
+  var rv=document.querySelectorAll('#rv .rv'), dots=document.querySelectorAll('.rv-dot'), ri=0, rt;
+  function show(i){ri=(i+rv.length)%rv.length; rv.forEach(function(e,k){e.classList.toggle('on',k===ri)}); dots.forEach(function(d,k){d.classList.toggle('on',k===ri)});}
+  function auto(){clearInterval(rt); if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches) rt=setInterval(function(){show(ri+1)},6500);}
+  dots.forEach(function(d,k){d.addEventListener('click',function(){show(k);auto();})});
+  auto();
 })();
 </script>
 </body>
