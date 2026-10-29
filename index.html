@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Archivo:wdth,wght@100..125,300..700&display=swap" rel="stylesheet">
 <style>
-/* Layout: Lyon Street structure (wordmark, mirrored portraits, About Us split, [01] service cards) + shampoo-site grey bands, product strip and full-bleed overlay + tray menu. Single light look by design. */
+/* Layout: Shampoo-site grey split hero + Lyon Street About Us split and numbered service cards + grey bands, product strip and full-bleed overlay + tray menu. Single light look by design. */
 :root{
   --cream:#F4F1EA;   /* Lyon Street ground */
   --ink:#111010;
@@ -40,27 +40,31 @@ p,h1,h2,h3{margin:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 42px;background:var(--espresso);color:#F4EFE9;text-decoration:none;font-size:.82rem;text-transform:uppercase;letter-spacing:.01em;transition:background .3s}
 .btn:hover{background:var(--ink)}
 
-/* nav + wordmark */
-.nav{display:flex;justify-content:space-between;align-items:center;padding-block:22px 0;font-size:.78rem;text-transform:uppercase}
-.nav nav{display:flex;gap:clamp(18px,3.4vw,48px)}
-.nav a{text-decoration:none}
-.nav a:hover{text-decoration:underline;text-underline-offset:4px}
-.nav .hide-sm{display:none}
-@media (min-width:760px){.nav .hide-sm{display:inline}}
-.wordmark{font-family:var(--wordmark);font-weight:500;text-transform:uppercase;white-space:nowrap;line-height:.78;letter-spacing:.06em;text-align:center;padding-block:clamp(26px,5vw,72px) clamp(14px,1.8vw,22px);font-size:11vw}
+/* hero: shampoo-site grey split, photo bleeding off the left */
+.top{position:relative;background:var(--grey);display:grid;overflow:hidden;color:#141210}
+@media (min-width:820px){.top{grid-template-columns:46% 1fr;min-height:clamp(520px,48vw,720px)}}
+.top-img{margin:0;min-height:420px;position:relative}
+.top-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 22%}
+@media (min-width:820px){.top-img::after{content:"";position:absolute;inset:0 0 0 auto;width:28%;background:linear-gradient(90deg,rgba(139,129,119,0),var(--grey))}}
+.top-col{display:grid;grid-template-rows:auto 1fr;padding-right:max(28px,env(safe-area-inset-right,0px));padding-left:max(28px,4vw)}
+@media (max-width:819px){.top-col{order:-1;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}.top{grid-template-columns:1fr}}
+.top-nav{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px;padding-block:24px 0;font-size:.74rem;text-transform:uppercase}
+.top-nav nav{display:flex;flex-wrap:wrap;gap:6px clamp(16px,2.6vw,40px)}
+.top-nav a{text-decoration:none}
+.top-nav nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.top-nav .logo{font-family:var(--wordmark);font-weight:500;letter-spacing:.08em;font-size:.95rem}
+.top-copy{display:grid;align-content:center;gap:12px;padding-block:44px 52px}
+.top-copy h1{font-variation-settings:"wdth" 118;font-weight:700;font-size:clamp(1.7rem,3.3vw,2.8rem)}
+.top-copy .sub{font-variation-settings:"wdth" 112;text-transform:uppercase;font-size:clamp(1.05rem,1.9vw,1.55rem);font-weight:400}
+.top-copy .act{display:flex;align-items:center;gap:22px;margin-top:20px}
+.top-copy .small-caps{max-width:34ch;margin-top:30px}
+.circ{width:44px;height:44px;border:1px solid currentColor;border-radius:50%;display:inline-grid;place-items:center;flex:none;background:none;color:inherit;cursor:pointer;padding:0}
+.circ svg{width:30px;height:12px;margin-left:22px;overflow:visible}
+.circ.l svg{margin-left:0;margin-right:22px;transform:scaleX(-1)}
+.lbtn{display:inline-flex;align-items:center;min-height:40px;padding:0 44px;background:#E8E6E3;color:#111;text-decoration:none;font-size:.82rem;text-transform:uppercase}
+.lbtn:hover{background:#fff}
+.wordmark{font-family:var(--wordmark);font-weight:500;text-transform:uppercase;white-space:nowrap;line-height:.78;letter-spacing:.06em;text-align:center;padding-block:clamp(40px,6vw,90px) clamp(8px,1vw,14px);font-size:11vw;margin:0;border-top:1px solid rgba(17,16,16,.12)}
 .wordmark span{display:inline-block;margin-right:-.06em}
-
-/* hero: mirrored portraits, dark copy centred on the seam */
-.hero{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:2px;height:clamp(440px,64vw,880px)}
-.hero figure{margin:0;overflow:hidden}
-.hero img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(1.18) contrast(.92) sepia(.08)}
-.hero .l img{object-position:40% 30%}
-.hero .r img{object-position:60% 40%;transform:scaleX(-1)}
-.hero::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 34% 30% at 50% 52%,rgba(244,241,234,.78),rgba(244,241,234,0) 100%)}
-.hero-copy{position:absolute;inset:0;z-index:2;display:grid;place-content:center;justify-items:center;text-align:center;gap:8px;padding-inline:16px}
-.hero-copy .brk{font-size:clamp(.95rem,1.5vw,1.2rem)}
-.hero-copy h1{font-size:clamp(1.6rem,3.3vw,2.6rem);max-width:15ch}
-.hero-copy .btn{margin-top:18px}
 
 /* about: Lyon split with air */
 .about{display:grid;gap:28px;padding-block:clamp(64px,8vw,120px) clamp(80px,12vw,180px)}
@@ -70,24 +74,8 @@ p,h1,h2,h3{margin:0}
 .about .txt p+p{margin-top:10px}
 .about .more{grid-column:1/-1;justify-self:end;margin-top:clamp(20px,6vw,80px);font-weight:700;font-size:.82rem;text-transform:uppercase;text-underline-offset:3px;letter-spacing:-.01em}
 
-/* grey band: shampoo hero */
-.band{background:var(--grey);color:#141210;display:grid;overflow:hidden}
-@media (min-width:820px){.band{grid-template-columns:44% 1fr;min-height:clamp(440px,42vw,640px)}}
-.band figure{margin:0;min-height:360px}
-.band figure img{width:100%;height:100%;object-fit:cover;object-position:30% 20%}
-.band .copy{display:grid;align-content:center;gap:14px;padding-block:48px;padding-left:max(28px,4vw);padding-right:max(28px,env(safe-area-inset-right,0px))}
-.band h2{font-variation-settings:"wdth" 118;font-weight:700;font-size:clamp(1.5rem,2.9vw,2.4rem)}
-.band .sub{font-variation-settings:"wdth" 112;text-transform:uppercase;font-size:clamp(1rem,1.7vw,1.4rem);font-weight:400}
-.band .act{display:flex;align-items:center;gap:22px;margin-top:20px}
-.circ{width:44px;height:44px;border:1px solid currentColor;border-radius:50%;display:inline-grid;place-items:center;flex:none;background:none;color:inherit;cursor:pointer;padding:0}
-.circ svg{width:30px;height:12px;margin-left:22px;overflow:visible}
-.circ.l svg{margin-left:0;margin-right:22px;transform:scaleX(-1)}
-.lbtn{display:inline-flex;align-items:center;min-height:40px;padding:0 44px;background:#E8E6E3;color:#111;text-decoration:none;font-size:.82rem;text-transform:uppercase}
-.lbtn:hover{background:#fff}
-.band .small-caps{max-width:34ch;margin-top:26px}
-
 /* services: Lyon cards */
-.svc{padding-block:clamp(90px,12vw,170px) clamp(80px,10vw,140px)}
+.svc{padding-block:clamp(40px,6vw,90px) clamp(80px,10vw,140px)}
 .svc .brk{font-size:clamp(1.1rem,1.8vw,1.45rem)}
 .svc h2{font-size:clamp(1.9rem,3.6vw,2.8rem);margin-top:2px}
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.8vw,22px);margin-top:clamp(48px,7vw,96px)}
@@ -148,44 +136,32 @@ footer a{text-underline-offset:3px}
 </head>
 <body>
 
-<header class="wrap">
-  <div class="nav">
-    <nav aria-label="Primary"><a href="#top">Home</a><a href="#services">Services</a><a href="#about">About us</a></nav>
-    <nav aria-label="Contact"><a class="hide-sm" href="#find">Contact us</a><a href="#find">Getting here</a></nav>
+<header class="top" id="top">
+  <figure class="top-img"><img src="img/brush.jpg" alt="Brushing through long wet blonde hair"></figure>
+  <div class="top-col">
+    <div class="top-nav">
+      <a class="logo" href="#top">Blinc Blonde</a>
+      <nav aria-label="Primary"><a href="#services">Services</a><a href="#about">About us</a><a href="#menu">Menu</a><a href="#find">Getting here</a></nav>
+    </div>
+    <div class="top-copy">
+      <h1 class="h">Perth's blonde specialists</h1>
+      <p class="sub">Choose your blonde with us</p>
+      <div class="act">
+        <a class="circ" href="quote.html" aria-label="Price my blonde"><svg viewBox="0 0 30 12" aria-hidden="true"><path d="M0 6h28M23 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></a>
+        <a class="lbtn" href="https://home.shortcutssoftware.com/blincblonde#/_h/locations/info" target="_blank" rel="noopener">Book now</a>
+      </div>
+      <p class="small-caps">Balayage, baby lights and bright blonde on Beaufort Street, Mt Lawley. Exclusively Aveda, with the health of your hair planned into every colour.</p>
+    </div>
   </div>
-  <p class="wordmark" aria-hidden="true" id="top"><span id="wm">Blinc Blonde</span></p>
 </header>
 
 <main>
-  <div class="hero">
-    <figure class="l"><img src="img/hero.jpg" alt="Lived-in blonde waves in profile at Blinc Blonde"></figure>
-    <figure class="r"><img src="img/reel.jpg" alt="A soft, toned blonde finished at Blinc Blonde"></figure>
-    <div class="hero-copy">
-      <p class="brk">Perth's Blonde Specialists</p>
-      <h1 class="h">Blonde services in Mt Lawley</h1>
-      <a class="btn" href="https://home.shortcutssoftware.com/blincblonde#/_h/locations/info" target="_blank" rel="noopener">Book now</a>
-    </div>
-  </div>
-
   <section class="about wrap" id="about">
     <h2 class="h">About us</h2>
     <div class="txt">
       <p>Blinc Blonde is a boutique salon on Beaufort Street, where Highgate meets Mt Lawley. We are a small team of colourists who do blonde every day, from soft lived-in balayage and fine baby lights to full platinum. We work exclusively with Aveda, and every big change is planned around the condition of your hair. If your blonde can't be reached safely in one visit, we map it across appointments, so you leave brighter each time and your hair stays strong.</p>
     </div>
     <a class="more" href="#find">Find out more</a>
-  </section>
-
-  <section class="band" aria-label="Healthy hair first">
-    <figure><img src="img/brush.jpg" alt="Brushing through long wet blonde hair"></figure>
-    <div class="copy">
-      <h2 class="h">Healthy hair first</h2>
-      <p class="sub">Choose your blonde with us</p>
-      <div class="act">
-        <a class="circ" href="quote.html" aria-label="Price my blonde"><svg viewBox="0 0 30 12" aria-hidden="true"><path d="M0 6h28M23 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></a>
-        <a class="lbtn" href="quote.html">Price it</a>
-      </div>
-      <p class="small-caps">Every colour is quoted as a range, because length, thickness and history change the work. Answer five questions and see an itemised estimate before you book.</p>
-    </div>
   </section>
 
   <section class="svc wrap" id="services">
@@ -287,8 +263,9 @@ footer a{text-underline-offset:3px}
   </section>
 </main>
 
+<p class="wordmark wrap" aria-hidden="true"><span id="wm">Blinc Blonde</span></p>
 <footer class="wrap" id="find">
-  <div class="mark">Blinc Blonde</div>
+  <div class="mark">Mt Lawley, Perth</div>
   <div><b>Getting here</b>479 Beaufort Street<br>Highgate WA 6003</div>
   <div><b>Contact us</b>(08) 6222 6677</div>
   <div><b>Follow</b><a href="https://www.instagram.com/blincblonde/" target="_blank" rel="noopener">@blincblonde</a><br><a href="https://theserviceedit.com" target="_blank" rel="noopener" style="text-transform:none">Site by The Service Edit</a></div>
@@ -298,7 +275,7 @@ footer a{text-underline-offset:3px}
 (function(){
   var wm=document.getElementById('wm');
   function fit(){
-    var box=wm.parentElement.parentElement, cs=getComputedStyle(box);
+    var box=wm.parentElement, cs=getComputedStyle(box);
     var avail=box.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
     wm.parentElement.style.fontSize='100px';
     var w=wm.getBoundingClientRect().width; if(w>0) wm.parentElement.style.fontSize=(100*avail/w*0.995)+'px';
