@@ -15,10 +15,10 @@
   --cream:#F4F1EA;   /* Lyon Street ground */
   --ink:#111010;
   --espresso:#3B2418;/* Lyon BOOK NOW */
-  --grey:#8B8177;    /* sampled from the brush shot backdrop */
-  --mist:#DAD8D5;    /* shampoo "products of the week" panel */
-  --swatch:#ADA9A4;  /* product tiles */
-  --tray:#D2D5D8;    /* sampled from the tray shot */
+  --grey:#DEB0A3;    /* blush, sampled from the hero backdrop */
+  --mist:#F8E4DE;    /* shampoo "products of the week" panel */
+  --swatch:#EFCBC1;  /* product tiles */
+  --tray:#F2CCC4;    /* sampled from the tray shot */
   --soft:#5E5A55;
   --wordmark:"Cormorant Garamond","Didot","Bodoni 72",Georgia,serif;
   --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
@@ -45,7 +45,7 @@ p,h1,h2,h3{margin:0}
 @media (min-width:820px){.top{grid-template-columns:46% 1fr;min-height:clamp(520px,48vw,720px)}}
 .top-img{margin:0;min-height:420px;position:relative}
 .top-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 22%}
-@media (min-width:820px){.top-img::after{content:"";position:absolute;inset:0 0 0 auto;width:28%;background:linear-gradient(90deg,rgba(139,129,119,0),var(--grey))}}
+@media (min-width:820px){.top-img::after{content:"";position:absolute;inset:0 0 0 auto;width:28%;background:linear-gradient(90deg,rgba(222,176,163,0),var(--grey))}}
 .top-col{display:grid;grid-template-rows:auto 1fr;padding-right:max(28px,env(safe-area-inset-right,0px));padding-left:max(28px,4vw)}
 @media (max-width:819px){.top-col{order:-1;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}.top{grid-template-columns:1fr}}
 .top-nav{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px;padding-block:22px 0;font-size:.74rem;text-transform:uppercase}
@@ -87,7 +87,6 @@ p,h1,h2,h3{margin:0}
 .card figure{margin:0;aspect-ratio:190/236;overflow:hidden}
 .card figure img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
 .card:hover figure img{transform:scale(1.04)}
-.card .mono{filter:grayscale(1) contrast(1.02) brightness(1.06)}
 .card h3{font-size:.8rem;font-weight:600;text-transform:uppercase;margin-top:12px}
 .card p{font-size:.68rem;line-height:1.3;color:var(--soft);max-width:30ch}
 .card .from{font-size:.68rem;font-weight:600;text-transform:uppercase}
@@ -111,7 +110,7 @@ p,h1,h2,h3{margin:0}
 /* menu on the tray */
 .menu{background:var(--tray);display:grid;place-items:center;padding-block:clamp(40px,6vw,80px);position:relative;overflow:hidden}
 .menu .stage{position:relative;width:min(100%,760px)}
-.menu .stage img{width:100%;height:auto;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent),linear-gradient(180deg,transparent,#000 9%,#000 91%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent),linear-gradient(180deg,transparent,#000 9%,#000 91%,transparent);mask-composite:intersect}
+.menu .stage img{width:100%;height:auto;-webkit-mask-image:linear-gradient(90deg,transparent,#000 22%,#000 78%,transparent),linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 22%,#000 78%,transparent),linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);mask-composite:intersect}
 .menu .paper{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:36%;aspect-ratio:290/410;background:#F4F3F1;box-shadow:6px 10px 14px -6px rgba(40,44,50,.35);padding:9% 7% 6%;display:grid;grid-template-rows:auto 1fr auto;gap:7%;color:#111;container-type:inline-size}
 .menu h2{font-weight:600;font-size:11.5cqw;letter-spacing:-.01em;text-transform:uppercase;line-height:1}
 .menu dl{display:grid;grid-template-columns:1fr auto;align-content:center;gap:5.5cqw 4cqw;margin:0;font-size:5.4cqw;text-transform:uppercase}
@@ -171,28 +170,28 @@ footer a{text-underline-offset:3px}
     <div class="cards">
       <a class="card" href="#menu">
         <span class="n">01</span>
-        <figure><img class="mono" src="img/studio.jpg" alt="Fine foils being placed" style="object-position:52% 50%"></figure>
+        <figure><img src="img/babylights.jpg" alt="Fine baby lights through a beige blonde base"></figure>
         <h3>Baby lights</h3>
         <p>Finely woven highlights for dimension and the look of fuller hair.</p>
         <span class="from">From $119</span>
       </a>
       <a class="card" href="#menu">
         <span class="n">02</span>
-        <figure><img src="img/waves.jpg" alt="Honey and champagne balayage waves"></figure>
+        <figure><img src="img/balayage.jpg" alt="Lived-in balayage waves from behind"></figure>
         <h3>Balayage</h3>
         <p>Hand-painted brightness that grows out softly. Lowest upkeep of any blonde.</p>
         <span class="from">From $140</span>
       </a>
       <a class="card" href="#menu">
         <span class="n">03</span>
-        <figure><img class="mono" src="img/wedding.jpg" alt="Bride with a low chignon" style="object-position:50% 60%"></figure>
+        <figure><img src="img/wedding.jpg" alt="Bride with a low chignon" style="object-position:50% 60%"></figure>
         <h3>Bridal</h3>
         <p>In salon or on location, from a single bride to the whole party.</p>
         <span class="from">From $120</span>
       </a>
       <a class="card" href="#menu">
         <span class="n">04</span>
-        <figure><img src="img/hero.jpg" alt="Bright blonde waves" style="object-position:38% 40%"></figure>
+        <figure><img src="img/golden.jpg" alt="Golden bright blonde waves"></figure>
         <h3>Bright blonde</h3>
         <p>Full-head lightening and a hand-finished tone, with condition protected.</p>
         <span class="from">From $220</span>
@@ -209,14 +208,14 @@ footer a{text-underline-offset:3px}
       <div class="strip">
         <div class="track" id="track">
           <a class="tile" href="https://www.instagram.com/blincblonde/" target="_blank" rel="noopener">
-            <figure><img src="img/hero.jpg" alt="Lived-in balayage" style="object-position:40% 40%"></figure>
-            <p class="small-caps">Lived-in balayage, long length, Aveda gloss</p>
-            <span class="price">From $140</span>
+            <figure><img src="img/icy.jpg" alt="Icy beige blonde with soft waves"></figure>
+            <p class="small-caps">Icy beige blonde, long layers, soft waves</p>
+            <span class="price">From $220</span>
           </a>
           <a class="tile" href="https://www.instagram.com/blincblonde/" target="_blank" rel="noopener">
-            <figure><img src="img/reel.jpg" alt="Toned blonde bob" style="object-position:55% 50%"></figure>
-            <p class="small-caps">Root retouch and toning gloss, bob length</p>
-            <span class="price">From $60</span>
+            <figure><img src="img/silver.jpg" alt="Dark root melting into silver ends"></figure>
+            <p class="small-caps">Silver melt from a natural root, textured lob</p>
+            <span class="price">Price at consultation</span>
           </a>
           <a class="tile" href="https://www.instagram.com/blincblonde/" target="_blank" rel="noopener">
             <figure><img src="img/wedding.jpg" alt="Bridal chignon" style="object-position:50% 60%"></figure>
@@ -224,9 +223,9 @@ footer a{text-underline-offset:3px}
             <span class="price">From $155</span>
           </a>
           <a class="tile" href="https://www.instagram.com/blincblonde/" target="_blank" rel="noopener">
-            <figure><img src="img/studio.jpg" alt="Fine foils in progress" style="object-position:52% 50%"></figure>
-            <p class="small-caps">Baby lights and fine foils, full head</p>
-            <span class="price">From $119</span>
+            <figure><img src="img/bright.jpg" alt="Bright creamy blonde with a money piece"></figure>
+            <p class="small-caps">Bright blonde with a money piece, blow-dry waves</p>
+            <span class="price">From $220</span>
           </a>
         </div>
       </div>
