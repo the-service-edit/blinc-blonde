@@ -55,7 +55,6 @@ p,h1,h2,h3{margin:0}
   .top-img::after{content:"";position:absolute;inset:auto 0 0 0;height:34%;background:linear-gradient(180deg,rgba(220,191,187,0),var(--grey))}
   .top-nav{position:absolute;top:0;left:0;right:0;z-index:2;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));align-items:flex-start}
   .top-nav .logo{width:76px}
-  .top-nav nav{flex-direction:column;align-items:flex-end;gap:8px;text-align:right}
   .top-copy{padding-block:0 44px;margin-top:-56px;position:relative;z-index:1}
 }
 .top-nav{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px;padding-block:22px 0;font-size:clamp(.76rem,.85vw,.86rem);text-transform:uppercase}
@@ -192,6 +191,24 @@ footer a{text-underline-offset:3px}
   .js .rv-up,.js .rv-clip,.js .rv-clip img,.js .menu .paper.rv-drop,.js .wordmark.rv-word span{opacity:1;translate:none;clip-path:none;scale:1;transition:none}
   .js .menu .paper.rv-drop{translate:-50% -50%}
 }
+
+/* mobile menu */
+.mtoggle{display:none}
+.mpanel{display:none}
+@media (max-width:819px){
+  .top-nav nav{display:none}
+  .mtoggle{display:inline-flex;align-items:center;gap:10px;background:none;border:0;padding:8px 0;font:inherit;font-size:.86rem;text-transform:uppercase;letter-spacing:.08em;color:inherit;cursor:pointer}
+  .mtoggle i{display:grid;gap:5px;width:22px}.mtoggle i::before,.mtoggle i::after{content:"";height:1.5px;background:currentColor}
+  .mpanel{display:grid;position:fixed;inset:0;z-index:60;background:var(--grey);color:#141210;grid-template-rows:auto 1fr auto;padding:calc(18px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s}
+  .mpanel.open{opacity:1;visibility:visible}
+  .mpanel .row{display:flex;justify-content:space-between;align-items:flex-start}
+  .mpanel .logo{width:76px}.mpanel .logo svg{display:block;width:100%;height:auto;overflow:visible}.mpanel .logo text{font-family:var(--wordmark);font-weight:500;font-size:24px;letter-spacing:.05em;fill:currentColor}
+  .mpanel nav{display:grid;align-content:center;gap:6px}
+  .mpanel nav a{font-family:var(--wordmark);font-weight:500;font-size:clamp(2.2rem,11vw,3rem);text-decoration:none;line-height:1.15;text-transform:uppercase;letter-spacing:.02em}
+  .mpanel .btn{width:100%;min-height:52px}
+  body.menu-open{overflow:hidden}
+}
+@media (prefers-reduced-motion:reduce){.mpanel{transition:none}}
 </style>
 </head>
 <body>
@@ -202,6 +219,7 @@ footer a{text-underline-offset:3px}
     <div class="top-nav">
       <a class="logo" href="#top" aria-label="Blinc Blonde home"><svg viewBox="0 0 200 200" role="img" aria-hidden="true"><rect x="38" y="38" width="124" height="124" transform="rotate(45 100 100)" fill="none" stroke="currentColor" stroke-width="2.2"/><text x="100" y="96" text-anchor="middle">BLINC</text><text x="100" y="124" text-anchor="middle">BLONDE</text></svg></a>
       <nav aria-label="Primary"><a href="services.html">Services</a><a href="#about">About us</a><a href="https://home.shortcutssoftware.com/blincblonde#/_h/locations/info" target="_blank" rel="noopener">Booking</a><a href="#find">Getting here</a></nav>
+      <button class="mtoggle" type="button" aria-expanded="false" aria-controls="mpanel">Menu <i aria-hidden="true"></i></button>
     </div>
     <div class="top-copy">
       <h1 class="h">Perth's blonde specialists</h1>
@@ -380,6 +398,12 @@ footer a{text-underline-offset:3px}
 })();
 </script>
 
+
+<div class="mpanel" id="mpanel" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="row"><a class="logo" href="./" aria-label="Blinc Blonde home"><svg viewBox="0 0 200 200" role="img" aria-hidden="true"><rect x="38" y="38" width="124" height="124" transform="rotate(45 100 100)" fill="none" stroke="currentColor" stroke-width="2.2"/><text x="100" y="96" text-anchor="middle">BLINC</text><text x="100" y="124" text-anchor="middle">BLONDE</text></svg></a><button class="mtoggle mclose" type="button">Close</button></div>
+  <nav aria-label="Mobile"><a href="services.html">Services</a><a href="./#about">About us</a><a href="#reviews">Reviews</a><a href="#find">Getting here</a></nav>
+  <a class="btn" href="https://home.shortcutssoftware.com/blincblonde#/_h/locations/info" target="_blank" rel="noopener">Book now</a>
+</div>
 <div class="mbook" id="mbook"><a href="https://home.shortcutssoftware.com/blincblonde#/_h/locations/info" target="_blank" rel="noopener">Book now</a></div>
 <script>
 (function(){var b=document.getElementById('mbook'),t=document.querySelector('.top,.sv-top');if(!b||!t)return;
@@ -403,6 +427,13 @@ if('IntersectionObserver' in window){new IntersectionObserver(function(e){b.clas
   function upd(){tick=false;if(innerWidth<820){par.forEach(function(i){i.style.translate=''});return}par.forEach(function(i){var r=i.parentElement.getBoundingClientRect();var c=(r.top+r.height/2-innerHeight/2),m=r.height*.08,v=Math.max(-m,Math.min(m,c*-0.08));i.style.translate='0 '+v.toFixed(1)+'px'})}
   addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});upd();
 })();
+</script>
+<script>
+(function(){var p=document.getElementById('mpanel');if(!p)return;var o=document.querySelector('.top-nav .mtoggle');
+function set(v){p.classList.toggle('open',v);document.body.classList.toggle('menu-open',v);if(o)o.setAttribute('aria-expanded',v);if(v){var f=p.querySelector('nav a');f&&f.focus()}else if(o){o.focus()}}
+o&&o.addEventListener('click',function(){set(true)});p.querySelector('.mclose').addEventListener('click',function(){set(false)});
+p.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&p.classList.contains('open'))set(false)});})();
 </script>
 </body>
 </html>
