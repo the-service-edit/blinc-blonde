@@ -8,7 +8,7 @@
 <meta name="description" content="Blinc Blonde: Perth's blonde specialists on Beaufort Street, Mt Lawley / Highgate. Balayage, baby lights and blonde colour. Exclusively Aveda.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Archivo:wdth,wght@100..125,300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Cormorant+Garamond:wght@500;600&family=Archivo:wdth,wght@100..125,300..700&display=swap" rel="stylesheet">
 <style>
 /* Layout: Shampoo-site grey split hero + Lyon Street About Us split and numbered service cards + grey bands, product strip and full-bleed overlay + tray menu. Single light look by design. */
 :root{
@@ -20,7 +20,7 @@
   --swatch:#ADA9A4;  /* product tiles */
   --tray:#D2D5D8;    /* sampled from the tray shot */
   --soft:#5E5A55;
-  --wordmark:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  --wordmark:"Cormorant Garamond","Didot","Bodoni 72",Georgia,serif;
   --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
   color-scheme:light;
 }
@@ -48,11 +48,13 @@ p,h1,h2,h3{margin:0}
 @media (min-width:820px){.top-img::after{content:"";position:absolute;inset:0 0 0 auto;width:28%;background:linear-gradient(90deg,rgba(139,129,119,0),var(--grey))}}
 .top-col{display:grid;grid-template-rows:auto 1fr;padding-right:max(28px,env(safe-area-inset-right,0px));padding-left:max(28px,4vw)}
 @media (max-width:819px){.top-col{order:-1;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}.top{grid-template-columns:1fr}}
-.top-nav{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px;padding-block:24px 0;font-size:.74rem;text-transform:uppercase}
+.top-nav{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px;padding-block:22px 0;font-size:.74rem;text-transform:uppercase}
 .top-nav nav{display:flex;flex-wrap:wrap;gap:6px clamp(16px,2.6vw,40px)}
 .top-nav a{text-decoration:none}
 .top-nav nav a:hover{text-decoration:underline;text-underline-offset:4px}
-.top-nav .logo{font-family:var(--wordmark);font-weight:500;letter-spacing:.08em;font-size:.95rem}
+.top-nav .logo{display:block;width:clamp(86px,8vw,112px);margin-block:-10px -14px}
+.top-nav .logo svg{display:block;width:100%;height:auto;overflow:visible}
+.top-nav .logo text{font-family:var(--wordmark);font-weight:500;font-size:24px;letter-spacing:.05em;fill:currentColor}
 .top-copy{display:grid;align-content:center;gap:12px;padding-block:44px 52px}
 .top-copy h1{font-variation-settings:"wdth" 118;font-weight:700;font-size:clamp(1.7rem,3.3vw,2.8rem)}
 .top-copy .sub{font-variation-settings:"wdth" 112;text-transform:uppercase;font-size:clamp(1.05rem,1.9vw,1.55rem);font-weight:400}
@@ -63,7 +65,7 @@ p,h1,h2,h3{margin:0}
 .circ.l svg{margin-left:0;margin-right:22px;transform:scaleX(-1)}
 .lbtn{display:inline-flex;align-items:center;min-height:40px;padding:0 44px;background:#E8E6E3;color:#111;text-decoration:none;font-size:.82rem;text-transform:uppercase}
 .lbtn:hover{background:#fff}
-.wordmark{font-family:var(--wordmark);font-weight:500;text-transform:uppercase;white-space:nowrap;line-height:.78;letter-spacing:.06em;text-align:center;padding-block:clamp(40px,6vw,90px) clamp(8px,1vw,14px);font-size:11vw;margin:0;border-top:1px solid rgba(17,16,16,.12)}
+.wordmark{font-family:var(--wordmark);font-weight:500;text-transform:uppercase;white-space:nowrap;line-height:.8;letter-spacing:.04em;text-align:center;padding-block:clamp(40px,6vw,90px) clamp(8px,1vw,14px);font-size:11vw;margin:0;border-top:1px solid rgba(17,16,16,.12)}
 .wordmark span{display:inline-block;margin-right:-.06em}
 
 /* about: Lyon split with air */
@@ -129,7 +131,7 @@ p,h1,h2,h3{margin:0}
 /* footer */
 footer{padding-block:56px 44px;display:grid;gap:22px;font-size:.78rem;text-transform:uppercase}
 @media (min-width:760px){footer{grid-template-columns:2fr 1fr 1fr 1fr;align-items:end}}
-footer .mark{font-family:var(--wordmark);font-weight:500;font-size:1.5rem;letter-spacing:.06em}
+footer .mark{font-family:var(--sans);font-weight:500;font-size:.78rem}
 footer b{display:block;font-weight:600;margin-bottom:4px}
 footer a{text-underline-offset:3px}
 </style>
@@ -140,7 +142,7 @@ footer a{text-underline-offset:3px}
   <figure class="top-img"><img src="img/brush.jpg" alt="Brushing through long wet blonde hair"></figure>
   <div class="top-col">
     <div class="top-nav">
-      <a class="logo" href="#top">Blinc Blonde</a>
+      <a class="logo" href="#top" aria-label="Blinc Blonde home"><svg viewBox="0 0 200 200" role="img" aria-hidden="true"><rect x="38" y="38" width="124" height="124" transform="rotate(45 100 100)" fill="none" stroke="currentColor" stroke-width="2.2"/><text x="100" y="96" text-anchor="middle">BLINC</text><text x="100" y="124" text-anchor="middle">BLONDE</text></svg></a>
       <nav aria-label="Primary"><a href="#services">Services</a><a href="#about">About us</a><a href="#menu">Menu</a><a href="#find">Getting here</a></nav>
     </div>
     <div class="top-copy">
