@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instant Colour Quote — Your Estimate in 60 Seconds | Blinc Blonde</title>
+<meta name="description" content="Get a real, itemised colour estimate for your hair in under 60 seconds — service, toner, treatment and total. No email gate. Then book or have a specialist confirm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..450;1,9..144,300..400&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  body{background:var(--cream-2)}
+  .q-wrap{max-width:740px;margin:0 auto;padding:0 var(--gutter)}
+  .q-shell{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-block:130px 96px}
+  .q-progress{position:fixed;top:0;left:0;height:2px;background:var(--champagne);width:0;z-index:130;transition:width .55s var(--ease)}
+  .q-top{position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;justify-content:space-between;padding:18px var(--gutter);background:rgba(246,240,231,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-2)}
+  .q-top .brand{font-size:1.3rem}
+  .q-top .brand small{font-size:.46rem}
+  .q-count{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--ink-3)}
+  .q-count b{color:var(--champagne);font-style:normal}
+
+  .q-step{display:none;animation:qin .6s var(--ease)}
+  .q-step.active{display:block}
+  @keyframes qin{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  .q-eyebrow{display:inline-flex;align-items:center;gap:.8em;font-size:.66rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--champagne);margin-bottom:18px}
+  .q-eyebrow::before{content:"";width:24px;height:1px;background:currentColor}
+  .q-q{font-family:var(--serif);font-weight:330;font-size:clamp(1.9rem,4.8vw,3.1rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:10px}
+  .q-sub{color:var(--ink-3);margin-bottom:34px;max-width:46ch}
+  .q-options{display:grid;gap:11px}
+  .q-options.two{grid-template-columns:1fr 1fr}
+  .opt{display:flex;align-items:center;gap:18px;width:100%;text-align:left;padding:21px 22px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);transition:border-color .35s var(--ease),transform .35s var(--ease),background .35s,color .35s;font-size:1rem}
+  .opt:hover{border-color:var(--champagne);transform:translateX(5px)}
+  .opt.sel{border-color:var(--ink);background:var(--ink);color:var(--cream)}
+  .opt .o-n{flex:none;width:34px;height:34px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--ink-3);transition:.35s}
+  .opt:hover .o-n{border-color:var(--champagne);color:var(--champagne)}
+  .opt.sel .o-n{background:var(--champagne);border-color:var(--champagne);color:#fff}
+  .opt .o-t{font-weight:600;letter-spacing:.01em}
+  .opt .o-d{display:block;font-size:.82rem;color:var(--ink-4);font-weight:400;margin-top:2px}
+  .opt.sel .o-d{color:rgba(246,240,231,.66)}
+
+  .q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:36px;gap:16px}
+  .q-back{display:inline-flex;align-items:center;gap:.5em;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--ink-4)}
+  .q-back:hover{color:var(--ink)}
+
+  /* ---- Result ---- */
+  .result{display:none}
+  .result.active{display:block;animation:qin .65s var(--ease)}
+  .res-top{text-align:center;margin-bottom:30px}
+  .res-figure{font-family:var(--serif);font-weight:330;font-size:clamp(3.6rem,13vw,6rem);line-height:.9;letter-spacing:-.03em;color:var(--ink)}
+  .res-range{font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-4);margin-top:14px}
+  .res-card{background:var(--paper);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .res-card .media{aspect-ratio:21/9;overflow:hidden}
+  .res-card .media img{width:100%;height:100%;object-fit:cover;object-position:50% 28%}
+  .res-card .body{padding:clamp(26px,4.5vw,44px)}
+  .res-card .svc-name{font-family:var(--serif);font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:350;margin-bottom:8px}
+  .res-card .svc-desc{color:var(--ink-2);margin-bottom:8px}
+  .lines{margin:28px 0;border-top:1px solid var(--line)}
+  .line{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:15px 0;border-bottom:1px solid var(--line-2)}
+  .line .l-name{font-weight:500}
+  .line .l-name small{display:block;font-weight:400;color:var(--ink-4);font-size:.8rem;letter-spacing:0;text-transform:none}
+  .line .l-price{font-family:var(--serif);font-size:1.1rem;color:var(--ink-2);white-space:nowrap}
+  .line.total{border-bottom:none;padding-top:20px}
+  .line.total .l-name{font-family:var(--serif);font-size:1.25rem}
+  .line.total .l-price{font-size:1.4rem;color:var(--ink)}
+  .res-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:26px}
+  .res-meta .k{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-4);display:block;margin-bottom:6px}
+  .res-meta .v{font-family:var(--serif);font-size:1.15rem;font-weight:350;line-height:1.15}
+  .res-flag{background:var(--cream-2);border-left:2px solid var(--champagne);padding:16px 20px;border-radius:1px;font-size:.92rem;color:var(--ink-2);margin-bottom:26px}
+  .res-tips h4{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--champagne);margin-bottom:14px}
+  .res-tips ul{list-style:none;display:grid;gap:11px;margin-bottom:8px}
+  .res-tips li{padding-left:26px;position:relative;color:var(--ink-2);font-size:.95rem}
+  .res-tips li::before{content:"";position:absolute;left:0;top:9px;width:10px;height:1px;background:var(--champagne)}
+  .res-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .res-restart{display:inline-flex;align-items:center;gap:.5em;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--ink-4);margin-top:22px}
+  .res-restart:hover{color:var(--ink)}
+  .res-note{font-size:.82rem;color:var(--ink-4);margin-top:20px;line-height:1.55}
+
+  /* optional confirm form */
+  .confirm{margin-top:30px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .confirm-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;cursor:pointer}
+  .confirm-head .t{font-family:var(--serif);font-size:1.2rem;font-weight:360}
+  .confirm-head .s{font-size:.88rem;color:var(--ink-4)}
+  .confirm-head .ico{flex:none;width:30px;height:30px;border:1px solid var(--line);border-radius:50%;position:relative;transition:transform .4s var(--ease)}
+  .confirm-head .ico::before,.confirm-head .ico::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--ink)}
+  .confirm-head .ico::before{width:11px;height:1.5px}.confirm-head .ico::after{width:1.5px;height:11px;transition:opacity .3s}
+  .confirm.open .confirm-head .ico{transform:rotate(90deg)}
+  .confirm.open .confirm-head .ico::after{opacity:0}
+  .confirm-body{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+  .confirm-body .pad{padding:0 24px 26px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
+  .field input{width:100%;padding:14px 15px;border:1px solid var(--line);border-radius:var(--radius);font-family:inherit;font-size:1rem;background:var(--cream);color:var(--ink)}
+  .field input:focus{outline:none;border-color:var(--champagne)}
+  .upload{border:1.5px dashed var(--line);border-radius:var(--radius);padding:22px;text-align:center;color:var(--ink-4);cursor:pointer;transition:.3s;font-size:.92rem}
+  .upload:hover{border-color:var(--champagne);color:var(--ink-2)}
+  .upload input{display:none}
+  .thumbs{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+  .thumbs img{width:60px;height:60px;object-fit:cover;border-radius:1px}
+  .confirm-done{display:none;padding:24px;background:var(--cream-2);border-radius:1px;text-align:center}
+  .confirm-done.show{display:block}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="bbgold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9b884"/><stop offset=".5" stop-color="#caa46a"/><stop offset="1" stop-color="#b78a4e"/></linearGradient></defs></svg>
+<div class="q-progress" id="bar"></div>
+<div class="q-top">
+  <a href="index.html" class="logo">
+    <svg class="diamond" viewBox="0 0 40 40" aria-hidden="true"><polygon class="d-out" points="20,2 38,20 20,38 2,20"/></svg>
+    <span class="lk"><b>Blinc Blonde</b></span>
+  </a>
+  <span class="q-count" id="counter"><b>01</b> / 05</span>
+</div>
+
+<div class="q-shell">
+<div class="q-wrap">
+
+  <!-- STEP 1 -->
+  <div class="q-step active" data-step="1">
+    <span class="q-eyebrow">Instant Colour Estimate</span>
+    <h1 class="q-q">What are you hoping to achieve?</h1>
+    <p class="q-sub">There are no wrong answers — this points us to the right service.</p>
+    <div class="q-options" data-key="goal">
+      <button class="opt" data-val="brighter"><span class="o-n">a</span><span><span class="o-t">Go brighter / lighter blonde</span><span class="o-d">More brightness, more impact</span></span></button>
+      <button class="opt" data-val="livedin"><span class="o-n">b</span><span><span class="o-t">Natural, low-maintenance blonde</span><span class="o-d">Lived-in balayage that grows out softly</span></span></button>
+      <button class="opt" data-val="dimension"><span class="o-n">c</span><span><span class="o-t">Add highlights &amp; dimension</span><span class="o-d">Baby lights &amp; fine foils</span></span></button>
+      <button class="opt" data-val="maintain"><span class="o-n">d</span><span><span class="o-t">Maintain / refresh my colour</span><span class="o-d">Root retouch, gloss &amp; toning</span></span></button>
+      <button class="opt" data-val="cut"><span class="o-n">e</span><span><span class="o-t">Cut &amp; style</span><span class="o-d">Precision cut and blow-dry</span></span></button>
+      <button class="opt" data-val="bridal"><span class="o-n">f</span><span><span class="o-t">Wedding or special event</span><span class="o-d">Bridal &amp; occasion hair</span></span></button>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="q-step" data-step="2">
+    <span class="q-eyebrow">Your Hair Today</span>
+    <h2 class="q-q">What's your current colour?</h2>
+    <p class="q-sub">Roughly where you're starting from.</p>
+    <div class="q-options two" data-key="current">
+      <button class="opt" data-val="natblonde"><span class="o-t">Natural blonde</span></button>
+      <button class="opt" data-val="colblonde"><span class="o-t">Coloured blonde</span></button>
+      <button class="opt" data-val="ltbrown"><span class="o-t">Light brown</span></button>
+      <button class="opt" data-val="dkbrown"><span class="o-t">Dark brown / black</span></button>
+      <button class="opt" data-val="redcopper"><span class="o-t">Red / copper</span></button>
+      <button class="opt" data-val="greys"><span class="o-t">Grey / blending greys</span></button>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="q-step" data-step="3">
+    <span class="q-eyebrow">Length &amp; Thickness</span>
+    <h2 class="q-q">How long is your hair?</h2>
+    <p class="q-sub">Length is the biggest driver of price and time.</p>
+    <div class="q-options two" data-key="length">
+      <button class="opt" data-val="short"><span><span class="o-t">Short</span><span class="o-d">Above the shoulders</span></span></button>
+      <button class="opt" data-val="mid"><span><span class="o-t">Mid-length</span><span class="o-d">Shoulder to collarbone</span></span></button>
+      <button class="opt" data-val="long"><span><span class="o-t">Long</span><span class="o-d">Past the chest</span></span></button>
+      <button class="opt" data-val="xlong"><span><span class="o-t">Extra long / very thick</span><span class="o-d">Mid-back or dense</span></span></button>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="q-step" data-step="4">
+    <span class="q-eyebrow">Colour History</span>
+    <h2 class="q-q">Has your hair been coloured before?</h2>
+    <p class="q-sub">Honest answers here mean an accurate estimate — and a healthier result.</p>
+    <div class="q-options" data-key="history">
+      <button class="opt" data-val="virgin"><span class="o-n">a</span><span><span class="o-t">Never coloured (virgin hair)</span><span class="o-d">Completely natural</span></span></button>
+      <button class="opt" data-val="highlights"><span class="o-n">b</span><span><span class="o-t">Previously highlighted / foiled</span><span class="o-d">Existing lightened pieces</span></span></button>
+      <button class="opt" data-val="allover"><span class="o-n">c</span><span><span class="o-t">Previous all-over colour</span><span class="o-d">Salon tint or block colour</span></span></button>
+      <button class="opt" data-val="box"><span class="o-n">d</span><span><span class="o-t">Box dye / at-home colour</span><span class="o-d">May need extra care to correct</span></span></button>
+      <button class="opt" data-val="buildup"><span class="o-n">e</span><span><span class="o-t">Years of colour build-up</span><span class="o-d">Layered colour over time</span></span></button>
+    </div>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="q-step" data-step="5">
+    <span class="q-eyebrow">Lifestyle</span>
+    <h2 class="q-q">How much upkeep suits you?</h2>
+    <p class="q-sub">We'll match you to colour that fits your life — not the other way around.</p>
+    <div class="q-options" data-key="maintenance">
+      <button class="opt" data-val="low"><span class="o-n">a</span><span><span class="o-t">As low as possible</span><span class="o-d">I want to stretch between visits</span></span></button>
+      <button class="opt" data-val="balanced"><span class="o-n">b</span><span><span class="o-t">Balanced</span><span class="o-d">Happy with every 8–10 weeks</span></span></button>
+      <button class="opt" data-val="high"><span class="o-n">c</span><span><span class="o-t">Bright &amp; flawless</span><span class="o-d">Worth the upkeep for maximum impact</span></span></button>
+    </div>
+    <div class="q-nav"><button class="q-back" data-back="4">← Back</button><span></span></div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result" id="result">
+    <div class="res-top">
+      <span class="q-eyebrow" style="justify-content:center">Your Personalised Estimate</span>
+      <div class="res-figure" id="resFigure">$0</div>
+      <div class="res-range" id="resRange"></div>
+    </div>
+    <div class="res-card">
+      <div class="media"><img id="resImg" src="" alt="Recommended service"></div>
+      <div class="body">
+        <div class="svc-name" id="resName"></div>
+        <p class="svc-desc" id="resDesc"></p>
+
+        <div class="lines" id="resLines"></div>
+
+        <div class="res-meta">
+          <div class="cell"><span class="k">Time in Salon</span><span class="v" id="resTime"></span></div>
+          <div class="cell"><span class="k">Maintenance</span><span class="v" id="resMaint"></span></div>
+          <div class="cell"><span class="k">Your Length</span><span class="v" id="resLen"></span></div>
+        </div>
+
+        <div class="res-flag" id="resFlag" style="display:none"></div>
+
+        <div class="res-tips">
+          <h4>How to prepare</h4>
+          <ul id="resTips"></ul>
+        </div>
+
+        <div class="res-cta">
+          <a href="https://home.shortcutssoftware.com/blincblonde" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book This Appointment <span class="arw">→</span></a>
+          <a href="services.html" class="btn btn-ghost btn-lg">See All Services</a>
+        </div>
+
+        <!-- optional confirm -->
+        <div class="confirm" id="confirm">
+          <div class="confirm-head" id="confirmHead">
+            <div><div class="t">Have a specialist confirm it</div><div class="s">Optional — we'll review your answers &amp; lock in your exact quote</div></div>
+            <span class="ico"></span>
+          </div>
+          <div class="confirm-body" id="confirmBody">
+            <div class="pad">
+              <div class="field"><label for="fname">First name</label><input type="text" id="fname" placeholder="Your name"></div>
+              <div class="field"><label for="femail">Email</label><input type="email" id="femail" placeholder="you@email.com"></div>
+              <div class="field"><label for="fphone">Mobile</label><input type="tel" id="fphone" placeholder="04xx xxx xxx"></div>
+              <label class="upload" id="uploadBox">
+                <input type="file" id="photoInput" accept="image/*" multiple>
+                Add inspiration photos (optional) — tap to upload
+              </label>
+              <div class="thumbs" id="thumbs"></div>
+              <button class="btn btn-gold btn-block" id="sendBtn" style="margin-top:16px">Send My Estimate to a Specialist</button>
+            </div>
+          </div>
+          <div class="confirm-done" id="confirmDone">
+            <div style="font-family:var(--serif);font-size:1.3rem;margin-bottom:6px">Thank you — it's on its way.</div>
+            <div style="color:var(--ink-3);font-size:.94rem">A Blinc Blonde colour specialist will review your answers and be in touch to confirm your quote and hold a time.</div>
+          </div>
+        </div>
+
+        <a class="res-restart" id="restart">↻ Start over</a>
+        <p class="res-note" id="resNote"></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+/* ===================== Quote engine ===================== */
+const answers = {goal:null,current:null,length:null,history:null,maintenance:null,photos:0,name:'',email:'',phone:''};
+let step = 1;
+const TOTAL = 5;
+const bar = document.getElementById('bar');
+const counter = document.getElementById('counter');
+const pad2 = n => String(n).padStart(2,'0');
+
+function show(n){
+  document.querySelectorAll('.q-step').forEach(s=>s.classList.remove('active'));
+  document.getElementById('result').classList.remove('active');
+  const el = document.querySelector(`.q-step[data-step="${n}"]`);
+  if(el) el.classList.add('active');
+  step = n;
+  bar.style.width = ((n-1)/TOTAL*100)+'%';
+  counter.innerHTML = `<b>${pad2(n)}</b> / ${pad2(TOTAL)}`;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* option select → store + advance */
+document.querySelectorAll('.q-step[data-step]').forEach(stepEl=>{
+  const group = stepEl.querySelector('.q-options');
+  if(!group) return;
+  const key = group.dataset.key;
+  group.querySelectorAll('.opt').forEach(opt=>{
+    opt.addEventListener('click',()=>{
+      group.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
+      opt.classList.add('sel');
+      answers[key] = opt.dataset.val;
+      const cur = parseInt(stepEl.dataset.step);
+      setTimeout(()=>{ cur < TOTAL ? show(cur+1) : finish(); }, 280);
+    });
+  });
+});
+document.querySelectorAll('.q-back').forEach(b=>b.addEventListener('click',()=>show(parseInt(b.dataset.back))));
+
+/* ---- pricing model ---- */
+const r5 = v => Math.round(v/5)*5;
+const lenMult = {short:1, mid:1.18, long:1.42, xlong:1.7};
+const lenLabel = {short:'Short', mid:'Mid-length', long:'Long', xlong:'Extra long'};
+const cutAdd  = {short:0, mid:10, long:22, xlong:34};
+
+const SERVICES = {
+  brighter:{
+    name:'Bright Blonde Refresh', img:'https://blincblonde.com/wp-content/uploads/2022/09/Platinum.png',
+    desc:'A full lightening and custom toning service for luminous, head-turning blonde — finished with a bond-protecting treatment to keep hair strong.',
+    time:{short:'~2.5 hrs',mid:'~3 hrs',long:'~3.5 hrs',xlong:'4 hrs +'}, maint:'8–10 weeks',
+    items:[ {n:'Full-head lightening', d:'Hand-applied, sectioned for an even result', base:[150,205], scale:true},
+            {n:'Toner & custom gloss', d:'Neutralises brass, perfects your shade', base:[45,65], scale:false},
+            {n:'Bond-building treatment', d:'Protects and strengthens through the lift', base:[25,40], scale:false} ]
+  },
+  livedin:{
+    name:'Lived-In Balayage', img:'https://blincblonde.com/wp-content/uploads/2022/09/Beach-Blonde.jpg',
+    desc:'Hand-painted, sun-kissed dimension that grows out beautifully — the most natural, lowest-maintenance way to be blonde.',
+    time:{short:'2.5 hrs',mid:'3 hrs',long:'3.5 hrs',xlong:'4 hrs'}, maint:'10–14 weeks',
+    items:[ {n:'Hand-painted balayage', d:'Freehand colour for a soft grow-out', base:[120,175], scale:true},
+            {n:'Toner & gloss', d:'Custom-blended to your tone', base:[40,60], scale:false},
+            {n:'Bond-building treatment', d:'Keeps painted ends healthy', base:[25,40], scale:false} ]
+  },
+  dimension:{
+    name:'Baby Lights & Fine Foils', img:'https://blincblonde.com/wp-content/uploads/2022/09/Baby-lights.png',
+    desc:'Finely-woven highlights for multi-dimensional depth and the illusion of fuller, more voluminous hair.',
+    time:{short:'2 hrs',mid:'2.5 hrs',long:'3 hrs',xlong:'3.5 hrs'}, maint:'8–12 weeks',
+    items:[ {n:'Fine foils', d:'Woven through for natural dimension', base:[95,150], scale:true},
+            {n:'Toner & gloss', d:'Seamlessly blends the brightness', base:[35,55], scale:false},
+            {n:'Bond-building treatment', d:'Protects lightened strands', base:[20,35], scale:false} ]
+  },
+  maintain:{
+    name:'Root Retouch & Gloss', img:'https://blincblonde.com/wp-content/uploads/2022/09/Beige.png',
+    desc:'The in-between appointment that keeps colour salon-fresh: a regrowth retouch and a custom toning gloss to banish brass and restore shine.',
+    time:{short:'1 hr',mid:'1.5 hrs',long:'1.5 hrs',xlong:'2 hrs'}, maint:'4–8 weeks',
+    items:[ {n:'Regrowth retouch', d:'Refreshes your root colour', base:[60,110], scale:true},
+            {n:'Toning gloss', d:'Revives shine and tone through mid-lengths', base:[30,50], scale:false} ]
+  },
+  cut:{
+    name:'Cut, Style & Blow-Dry', img:'https://blincblonde.com/wp-content/uploads/2022/09/Dirty-Brunettte.png',
+    desc:'A precision cut tailored to your texture and finished with an Aveda wash ritual and a flawless blow-dry.',
+    time:{short:'45 min',mid:'1 hr',long:'1.25 hrs',xlong:'1.5 hrs'}, maint:'6–10 weeks',
+    items:[ {n:'Wash, cut & blow-dry', d:'Tailored to your hair and how you wear it', base:[49,89], scaleAdd:true} ]
+  },
+  bridal:{
+    name:'Bridal & Occasion Hair', img:'https://blincblonde.com/wp-content/uploads/2023/03/Blinc-Blond-Wedding.png',
+    desc:'Sought-after bridal styling, in-salon or on location. Begins with a complimentary consultation and an optional trial.',
+    time:{short:'1 hr',mid:'1.25 hrs',long:'1.5 hrs',xlong:'1.5 hrs'}, maint:'Per event',
+    items:[ {n:'Bridal styling (in salon)', d:'Your finished look on the day', base:[120,120], scale:false},
+            {n:'Trial run (recommended)', d:'Perfect the look beforehand', base:[150,150], scale:false} ]
+  }
+};
+
+function finish(){
+  const g = answers.goal || 'livedin';
+  const svc = SERVICES[g];
+  const L = answers.length || 'mid';
+  const mult = lenMult[L];
+  const heavy = ['box','buildup','allover'].includes(answers.history);
+  const darkStart = ['dkbrown','redcopper'].includes(answers.current);
+  const lightening = ['brighter','livedin','dimension'].includes(g);
+
+  // build line items
+  let sumLow=0, sumHigh=0;
+  const lineHTML = svc.items.map(it=>{
+    let lo=it.base[0], hi=it.base[1];
+    if(it.scale){ lo*=mult; hi*=mult; }
+    if(it.scaleAdd){ lo+=cutAdd[L]; hi+=cutAdd[L]; }
+    // history / correction loading on the main colour line only
+    if(lightening && it.scale){
+      if(heavy){ lo*=1.2; hi*=1.28; }
+      if(darkStart){ hi*=1.22; }
+    }
+    lo=r5(lo); hi=r5(hi);
+    sumLow+=lo; sumHigh+=hi;
+    const price = lo===hi ? `$${lo}` : `$${lo}–$${hi}`;
+    return `<div class="line"><span class="l-name">${it.n}<small>${it.d}</small></span><span class="l-price">${price}</span></div>`;
+  }).join('');
+
+  const mid = r5((sumLow+sumHigh)/2);
+  document.getElementById('resFigure').textContent = '≈ $'+mid;
+  document.getElementById('resRange').textContent = `Estimated $${sumLow} – $${sumHigh}`;
+  document.getElementById('resName').textContent = svc.name;
+  document.getElementById('resImg').src = svc.img;
+  document.getElementById('resDesc').textContent = svc.desc;
+  document.getElementById('resTime').textContent = svc.time[L];
+  document.getElementById('resMaint').textContent = svc.maint;
+  document.getElementById('resLen').textContent = lenLabel[L];
+  document.getElementById('resLines').innerHTML = lineHTML +
+    `<div class="line total"><span class="l-name">Estimated total</span><span class="l-price">$${sumLow}–$${sumHigh}</span></div>`;
+
+  // contextual flag
+  let flag='';
+  if(darkStart && g==='brighter'){ flag = 'Going significantly lighter from a dark base is often staged across more than one visit to protect your hair. We\'ll confirm the right plan at your consultation.'; }
+  else if(answers.history==='box' || answers.history==='buildup'){ flag = 'Box dye and colour build-up can affect how evenly hair lifts. Your specialist may adjust this estimate after seeing your hair in person.'; }
+  else if(g==='bridal'){ flag = 'Bridal party and on-location pricing is quoted individually. A trial is recommended 4–6 weeks before the day.'; }
+  const flagEl = document.getElementById('resFlag');
+  if(flag){ flagEl.style.display='block'; flagEl.textContent=flag; } else { flagEl.style.display='none'; }
+
+  // prep tips
+  const tips=[];
+  if(lightening){ tips.push('Arrive with clean, dry hair — a little natural oil is fine, heavy product is not.'); tips.push('Bring one or two inspiration photos so we can match your exact tone.'); }
+  if(heavy||answers.history==='box'){ tips.push('Let us know about any box dye or build-up when you arrive — it affects how we lift safely.'); }
+  if(g==='maintain'){ tips.push('Book before brassiness sets in — a gloss every 6–8 weeks keeps colour fresh.'); }
+  if(g==='cut'){ tips.push('Think about how much length you\'re happy to lose, and bring a photo of cuts you love.'); }
+  if(g==='bridal'){ tips.push('Have a few inspiration looks and your dress neckline handy for the trial.'); }
+  tips.push('Ask us about Aveda home-care to make your colour last longer between visits.');
+  document.getElementById('resTips').innerHTML = tips.map(t=>`<li>${t}</li>`).join('');
+
+  document.getElementById('resNote').textContent =
+    'This is a guided estimate based on your answers — exactly how our stylists scope a quote. Your final price is confirmed in person, where we can see your hair\'s length, density and condition.';
+
+  document.querySelectorAll('.q-step').forEach(s=>s.classList.remove('active'));
+  document.getElementById('result').classList.add('active');
+  bar.style.width='100%';
+  counter.innerHTML='Your estimate';
+  window.scrollTo({top:0,behavior:'smooth'});
+  console.log('Quote generated:', JSON.parse(JSON.stringify(answers)), {low:sumLow,high:sumHigh,mid});
+}
+
+/* confirm form (optional) */
+const confirm = document.getElementById('confirm');
+const cBody = document.getElementById('confirmBody');
+document.getElementById('confirmHead').addEventListener('click',()=>{
+  confirm.classList.toggle('open');
+  cBody.style.maxHeight = confirm.classList.contains('open') ? cBody.scrollHeight+'px' : null;
+});
+const photoInput = document.getElementById('photoInput');
+const thumbs = document.getElementById('thumbs');
+photoInput.addEventListener('change',e=>{
+  [...e.target.files].forEach(f=>{ answers.photos++; const img=document.createElement('img'); img.src=URL.createObjectURL(f); thumbs.appendChild(img); });
+  cBody.style.maxHeight = cBody.scrollHeight+'px';
+});
+document.getElementById('sendBtn').addEventListener('click',()=>{
+  answers.name=document.getElementById('fname').value.trim();
+  answers.email=document.getElementById('femail').value.trim();
+  answers.phone=document.getElementById('fphone').value.trim();
+  if(!answers.email || !answers.email.includes('@')){ const f=document.getElementById('femail'); f.focus(); f.style.borderColor='#c0392b'; return; }
+  /* INTEGRATION: POST `answers` to your CRM / email / booking system here */
+  console.log('Lead captured:', JSON.parse(JSON.stringify(answers)));
+  cBody.style.display='none';
+  document.getElementById('confirmDone').classList.add('show');
+});
+
+document.getElementById('restart').addEventListener('click',()=>{
+  Object.keys(answers).forEach(k=>answers[k]= (typeof answers[k]==='number'?0:'') );
+  answers.goal=answers.current=answers.length=answers.history=answers.maintenance=null;
+  document.querySelectorAll('.opt.sel').forEach(o=>o.classList.remove('sel'));
+  show(1);
+});
+
+show(1);
+</script>
+</body>
+</html>

@@ -1,18 +1,15 @@
-# Blinc Blonde — website
+# Blinc Blonde website
 
-Blinc Blonde rebrand built on the Sloans (Showit) homepage layout: same structure,
-animations and fonts, restyled and re-content-ed for Blinc Blonde (Highgate, Perth).
+Staging build of the new Blinc Blonde site (Perth blonde specialists), by The Service Edit.
 
-## Files
-- `index.html` — the site. Open in a browser.
-- `build.py` — the build script that transforms the original Sloans HTML into this
-  rebrand (asset re-linking, copy/image/logo/colour overrides).
+Live preview: https://blinc.theserviceedit.com
 
-## Note on assets
-The original Showit theme CSS/JS (which power the exact layout + animations) are
-linked from their live source, so **the page needs an internet connection to render**.
-Images, fonts and the booking link load from blincblonde.com and CDNs.
+## Pages
+- `index.html` - editorial homepage
+- `services.html` - services and investment ranges
+- `quote.html` - instant quote tool
 
-## Placeholders to replace with real content
-- Testimonials (currently illustrative)
-- Footer contact email (currently shows `blincblonde.com`)
+## Before launch on blincblonde.com
+- Remove the `noindex` meta tags and `robots.txt` (staging only).
+- Swap `CNAME` to the client domain.
+- Confirm prices against Shortcuts, the street address, and replace older salon photos.
