@@ -15,7 +15,7 @@
   --cream:#F4F1EA;   /* Lyon Street ground */
   --ink:#111010;
   --espresso:#3B2418;/* Lyon BOOK NOW */
-  --grey:#DBB1A5;    /* blush, sampled from the hero backdrop */
+  --grey:#DCBFBB;    /* blush, sampled from the hero backdrop */
   --mist:#F8E4DE;    /* shampoo "products of the week" panel */
   --swatch:#EFCBC1;  /* product tiles */
   --tray:#F2CCC4;    /* sampled from the tray shot */
@@ -44,8 +44,8 @@ p,h1,h2,h3{margin:0}
 .top{position:relative;background:var(--grey);display:grid;overflow:hidden;color:#141210}
 @media (min-width:820px){.top{grid-template-columns:46% 1fr;min-height:clamp(520px,48vw,720px)}}
 .top-img{margin:0;min-height:420px;position:relative}
-.top-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
-@media (min-width:820px){.top-img::after{content:"";position:absolute;inset:0 0 0 auto;width:12%;background:linear-gradient(90deg,rgba(219,177,165,0),var(--grey))}}
+.top-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 18%}
+@media (min-width:820px){.top-img::after{content:"";position:absolute;inset:0 0 0 auto;width:12%;background:linear-gradient(90deg,rgba(220,191,187,0),var(--grey))}}
 .top-col{display:grid;grid-template-rows:auto 1fr;padding-right:max(28px,env(safe-area-inset-right,0px));padding-left:max(28px,4vw)}
 @media (max-width:819px){.top-col{order:-1;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}.top{grid-template-columns:1fr}}
 .top-nav{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px;padding-block:22px 0;font-size:.74rem;text-transform:uppercase}
@@ -152,7 +152,7 @@ footer a{text-underline-offset:3px}
 <body>
 
 <header class="top" id="top">
-  <figure class="top-img"><img src="img/hero.jpg" alt="Long bronde balayage in glossy vintage waves, seen from behind"></figure>
+  <figure class="top-img"><img src="img/icy.jpg" alt="Icy beige blonde with soft waves, finished at Blinc Blonde"></figure>
   <div class="top-col">
     <div class="top-nav">
       <a class="logo" href="#top" aria-label="Blinc Blonde home"><svg viewBox="0 0 200 200" role="img" aria-hidden="true"><rect x="38" y="38" width="124" height="124" transform="rotate(45 100 100)" fill="none" stroke="currentColor" stroke-width="2.2"/><text x="100" y="96" text-anchor="middle">BLINC</text><text x="100" y="124" text-anchor="middle">BLONDE</text></svg></a>
@@ -222,9 +222,9 @@ footer a{text-underline-offset:3px}
       <div class="strip">
         <div class="track" id="track">
           <a class="tile" href="https://www.instagram.com/blincblonde/" target="_blank" rel="noopener">
-            <figure><img src="img/icy.jpg" alt="Icy beige blonde with soft waves"></figure>
-            <p class="small-caps">Icy beige blonde, long layers, soft waves</p>
-            <span class="price">From $220</span>
+            <figure><img src="img/hero.jpg" alt="Long bronde balayage in vintage waves"></figure>
+            <p class="small-caps">Bronde balayage, long length, vintage waves</p>
+            <span class="price">From $140</span>
           </a>
           <a class="tile" href="https://www.instagram.com/blincblonde/" target="_blank" rel="noopener">
             <figure><img src="img/silver.jpg" alt="Dark root melting into silver ends"></figure>
