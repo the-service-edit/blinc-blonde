@@ -15,7 +15,7 @@
   --cream:#F4F1EA;   /* Lyon Street ground */
   --ink:#111010;
   --espresso:#3B2418;/* Lyon BOOK NOW */
-  --grey:#DEB0A3;    /* blush, sampled from the hero backdrop */
+  --grey:#DBB1A5;    /* blush, sampled from the hero backdrop */
   --mist:#F8E4DE;    /* shampoo "products of the week" panel */
   --swatch:#EFCBC1;  /* product tiles */
   --tray:#F2CCC4;    /* sampled from the tray shot */
@@ -44,8 +44,8 @@ p,h1,h2,h3{margin:0}
 .top{position:relative;background:var(--grey);display:grid;overflow:hidden;color:#141210}
 @media (min-width:820px){.top{grid-template-columns:46% 1fr;min-height:clamp(520px,48vw,720px)}}
 .top-img{margin:0;min-height:420px;position:relative}
-.top-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 22%}
-@media (min-width:820px){.top-img::after{content:"";position:absolute;inset:0 0 0 auto;width:28%;background:linear-gradient(90deg,rgba(222,176,163,0),var(--grey))}}
+.top-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+@media (min-width:820px){.top-img::after{content:"";position:absolute;inset:0 0 0 auto;width:12%;background:linear-gradient(90deg,rgba(219,177,165,0),var(--grey))}}
 .top-col{display:grid;grid-template-rows:auto 1fr;padding-right:max(28px,env(safe-area-inset-right,0px));padding-left:max(28px,4vw)}
 @media (max-width:819px){.top-col{order:-1;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}.top{grid-template-columns:1fr}}
 .top-nav{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px;padding-block:22px 0;font-size:.74rem;text-transform:uppercase}
@@ -109,13 +109,15 @@ p,h1,h2,h3{margin:0}
 
 /* menu on the tray */
 .menu{background:var(--tray);display:grid;place-items:center;padding-block:clamp(40px,6vw,80px);position:relative;overflow:hidden}
-.menu .stage{position:relative;width:min(100%,760px)}
+.menu .stage{position:relative;width:min(100%,1080px)}
 .menu .stage img{width:100%;height:auto;-webkit-mask-image:linear-gradient(90deg,transparent,#000 22%,#000 78%,transparent),linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 22%,#000 78%,transparent),linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);mask-composite:intersect}
-.menu .paper{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:36%;aspect-ratio:290/410;background:#F4F3F1;box-shadow:6px 10px 14px -6px rgba(40,44,50,.35);padding:9% 7% 6%;display:grid;grid-template-rows:auto 1fr auto;gap:7%;color:#111;container-type:inline-size}
+.menu .paper{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:38%;aspect-ratio:290/410;background:#F4F3F1;box-shadow:6px 10px 14px -6px rgba(40,44,50,.35);padding:9% 7% 6%;display:grid;grid-template-rows:auto 1fr auto;gap:7%;color:#111;container-type:inline-size}
 .menu h2{font-weight:600;font-size:11.5cqw;letter-spacing:-.01em;text-transform:uppercase;line-height:1}
 .menu dl{display:grid;grid-template-columns:1fr auto;align-content:center;gap:5.5cqw 4cqw;margin:0;font-size:5.4cqw;text-transform:uppercase}
-.menu dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
-.menu .tag{text-align:center;font-size:4.6cqw}
+.menu dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;text-transform:none}
+.menu dd small{font-size:.82em;color:#6C665F;margin-right:.35em}
+.menu .book{justify-self:center;display:inline-flex;align-items:center;justify-content:center;padding:3.6cqw 9cqw;background:var(--espresso);color:#F4EFE9;text-decoration:none;font-size:4.4cqw;text-transform:uppercase;letter-spacing:.04em}
+.menu .book:hover{background:var(--ink)}
 @media (max-width:560px){.menu .paper{width:44%;top:47%}.menu .stage{width:118%;margin-inline:-9%}}
 
 /* full-bleed foam: shampoo About Us overlay */
@@ -138,7 +140,7 @@ footer a{text-underline-offset:3px}
 <body>
 
 <header class="top" id="top">
-  <figure class="top-img"><img src="img/brush.jpg" alt="Brushing through long wet blonde hair"></figure>
+  <figure class="top-img"><img src="img/hero.jpg" alt="Long bronde balayage in glossy vintage waves, seen from behind"></figure>
   <div class="top-col">
     <div class="top-nav">
       <a class="logo" href="#top" aria-label="Blinc Blonde home"><svg viewBox="0 0 200 200" role="img" aria-hidden="true"><rect x="38" y="38" width="124" height="124" transform="rotate(45 100 100)" fill="none" stroke="currentColor" stroke-width="2.2"/><text x="100" y="96" text-anchor="middle">BLINC</text><text x="100" y="124" text-anchor="middle">BLONDE</text></svg></a>
@@ -238,12 +240,12 @@ footer a{text-underline-offset:3px}
       <div class="paper">
         <h2>Blinc menu</h2>
         <dl>
-          <dt>Root retouch</dt><dd>60</dd>
-          <dt>Baby lights</dt><dd>119</dd>
-          <dt>Balayage</dt><dd>140</dd>
-          <dt>Bright blonde</dt><dd>220</dd>
+          <dt>Root retouch</dt><dd><small>from</small>$60</dd>
+          <dt>Baby lights</dt><dd><small>from</small>$119</dd>
+          <dt>Balayage</dt><dd><small>from</small>$140</dd>
+          <dt>Bright blonde</dt><dd><small>from</small>$220</dd>
         </dl>
-        <p class="tag">@blincblonde</p>
+        <a class="book" href="https://home.shortcutssoftware.com/blincblonde#/_h/locations/info" target="_blank" rel="noopener">Book now</a>
       </div>
     </div>
   </section>
