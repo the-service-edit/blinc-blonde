@@ -1,249 +1,301 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-AU">
 <head>
-<meta charset="UTF-8">
-<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Services — Blonde, Balayage, Colour & Bridal | Blinc Blonde Perth</title>
-<meta name="description" content="Aspirational blonde and colour services in Highgate, Perth — balayage, foils, bright blonde, gloss, cuts and bridal. Honest investment ranges, healthy-hair philosophy, Aveda care.">
+<meta name="robots" content="noindex, nofollow">
+<title>Hair Services &amp; Prices | Blinc Blonde, Mt Lawley Perth</title>
+<meta name="description" content="Blinc Blonde services and prices: blonde packages, balayage, colour, colour correction, cuts, blow-dries and bridal styling on Beaufort Street, Mt Lawley.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..450;1,9..144,300..400&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Cormorant+Garamond:wght@500;600&family=Archivo:wdth,wght@100..125,300..700&display=swap" rel="stylesheet">
+<style>
+/* Layout: Shampoo-site grey split hero + Lyon Street About Us split and numbered service cards + grey bands, product strip and full-bleed overlay + tray menu. Single light look by design. */
+:root{
+  --cream:#F4F1EA;   /* Lyon Street ground */
+  --ink:#111010;
+  --espresso:#3B2418;/* Lyon BOOK NOW */
+  --grey:#DCBFBB;    /* blush, sampled from the hero backdrop */
+  --mist:#F8E4DE;    /* shampoo "products of the week" panel */
+  --swatch:#EFCBC1;  /* product tiles */
+  --tray:#F2CCC4;    /* sampled from the tray shot */
+  --soft:#5E5A55;
+  --wordmark:"Cormorant Garamond","Didot","Bodoni 72",Georgia,serif;
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%}
+p,h1,h2,h3{margin:0}
+.wrap{padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px))}
+@media (max-width:600px){.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+/* shared type */
+.h{font-weight:600;text-transform:uppercase;letter-spacing:-.01em;line-height:1.02;text-wrap:balance}
+.brk{font-weight:300;font-size:clamp(1.05rem,1.7vw,1.35rem)}
+.small-caps{font-size:clamp(.74rem,.9vw,.86rem);line-height:1.4;text-transform:uppercase;letter-spacing:.01em}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 42px;background:var(--espresso);color:#F4EFE9;text-decoration:none;font-size:.82rem;text-transform:uppercase;letter-spacing:.01em;transition:background .3s}
+.btn:hover{background:var(--ink)}
+
+/* hero: shampoo-site grey split, photo bleeding off the left */
+.top{position:relative;background:var(--grey);display:grid;overflow:hidden;color:#141210}
+@media (min-width:820px){.top{grid-template-columns:46% 1fr;min-height:clamp(520px,48vw,720px)}}
+.top-img{margin:0;min-height:420px;position:relative}
+.top-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 18%}
+@media (min-width:820px){.top-img::after{content:"";position:absolute;inset:0 0 0 auto;width:12%;background:linear-gradient(90deg,rgba(220,191,187,0),var(--grey))}}
+.top-col{display:grid;grid-template-rows:auto 1fr;padding-right:max(28px,env(safe-area-inset-right,0px));padding-left:max(28px,4vw)}
+@media (max-width:819px){.top-col{order:-1;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}.top{grid-template-columns:1fr}}
+.top-nav{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px;padding-block:22px 0;font-size:clamp(.76rem,.85vw,.86rem);text-transform:uppercase}
+.top-nav nav{display:flex;flex-wrap:wrap;gap:6px clamp(16px,2.6vw,40px)}
+.top-nav a{text-decoration:none}
+.top-nav nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.top-nav .logo{display:block;width:clamp(86px,8vw,112px);margin-block:-10px -14px}
+.top-nav .logo svg{display:block;width:100%;height:auto;overflow:visible}
+.top-nav .logo text{font-family:var(--wordmark);font-weight:500;font-size:24px;letter-spacing:.05em;fill:currentColor}
+.top-copy{display:grid;align-content:center;gap:12px;padding-block:44px 52px}
+.top-copy h1{font-variation-settings:"wdth" 118;font-weight:700;font-size:clamp(1.7rem,3.3vw,2.8rem)}
+.top-copy .sub{font-variation-settings:"wdth" 112;text-transform:uppercase;font-size:clamp(1.05rem,1.9vw,1.55rem);font-weight:400}
+.top-copy .act{display:flex;align-items:center;gap:22px;margin-top:20px}
+.top-copy .small-caps{max-width:40ch;margin-top:30px}
+.circ{width:44px;height:44px;border:1px solid currentColor;border-radius:50%;display:inline-grid;place-items:center;flex:none;background:none;color:inherit;cursor:pointer;padding:0}
+.circ svg{width:30px;height:12px;margin-left:22px;overflow:visible}
+.circ.l svg{margin-left:0;margin-right:22px;transform:scaleX(-1)}
+.lbtn{display:inline-flex;align-items:center;min-height:40px;padding:0 44px;background:#E8E6E3;color:#111;text-decoration:none;font-size:.82rem;text-transform:uppercase}
+.lbtn:hover{background:#fff}
+.wordmark{font-family:var(--wordmark);font-weight:500;text-transform:uppercase;white-space:nowrap;line-height:.8;letter-spacing:.04em;text-align:center;padding-block:clamp(40px,6vw,90px) clamp(8px,1vw,14px);font-size:11vw;margin:0;border-top:1px solid rgba(17,16,16,.12)}
+.wordmark span{display:inline-block;margin-right:-.06em}
+
+/* about: Lyon split with air */
+.about{display:grid;gap:24px;padding-block:clamp(56px,6vw,96px) clamp(40px,4vw,64px)}
+@media (min-width:820px){.about{grid-template-columns:1fr minmax(0,520px);column-gap:6vw;align-items:start}}
+.about h2{font-size:clamp(2rem,3.6vw,2.8rem)}
+.about .txt{font-size:clamp(.95rem,1.05vw,1.08rem);line-height:1.55;text-align:justify;hyphens:auto}
+.about .txt p+p{margin-top:10px}
+.about .more{grid-column:1/-1;justify-self:end;margin-top:clamp(8px,1.5vw,20px);font-weight:700;font-size:.86rem;text-transform:uppercase;text-underline-offset:3px;letter-spacing:-.01em}
+
+/* services: Lyon cards */
+.svc{padding-block:clamp(40px,4vw,64px) clamp(72px,8vw,120px)}
+.svc .brk{font-size:clamp(1.1rem,1.8vw,1.45rem)}
+.svc h2{font-size:clamp(1.9rem,3.6vw,2.8rem);margin-top:2px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.8vw,22px);margin-top:clamp(48px,7vw,96px)}
+@media (min-width:900px){.cards{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.card{display:grid;gap:10px;align-content:start;text-decoration:none}
+.card .n{font-size:.9rem;padding-left:14px}
+.card figure{margin:0;aspect-ratio:190/236;overflow:hidden}
+.card figure img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.card:hover figure img{transform:scale(1.04)}
+.card h3{font-size:clamp(.86rem,1vw,1rem);font-weight:600;text-transform:uppercase;margin-top:12px}
+.card p{font-size:clamp(.8rem,.95vw,.94rem);line-height:1.45;color:var(--soft);max-width:34ch}
+.card .from{font-size:clamp(.76rem,.85vw,.86rem);font-weight:600;text-transform:uppercase}
+.svc .cta{display:flex;justify-content:center;margin-top:clamp(56px,8vw,110px)}
+
+/* fresh from the chair: product strip */
+.week{background:var(--mist);padding-block:clamp(56px,7vw,96px)}
+.week .head{display:flex;align-items:center;gap:0;position:relative}
+.week .star{width:clamp(60px,7vw,92px);height:auto;margin-right:-18px;flex:none}
+.week h2{font-size:clamp(1.3rem,2.5vw,2rem);position:relative}
+.strip{display:grid;grid-template-columns:1fr;align-items:center;gap:clamp(8px,2.4vw,40px);margin-top:clamp(28px,4vw,48px)}
+.track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 3*clamp(14px,2.4vw,36px))/4);gap:clamp(14px,2.4vw,36px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;min-width:0}
+.track::-webkit-scrollbar{display:none}
+@media (max-width:700px){.track{grid-auto-columns:78%}}
+.tile{scroll-snap-align:start;display:grid;gap:12px;text-decoration:none}
+.tile figure{margin:0;background:var(--swatch);aspect-ratio:1/.98;display:grid;place-items:center;overflow:hidden}
+.tile figure img{width:52%;height:84%;object-fit:cover;box-shadow:0 18px 30px -18px rgba(0,0,0,.45)}
+.tile .small-caps{max-width:26ch}
+.tile .price{font-size:clamp(.76rem,.85vw,.86rem)}
+
+/* reviews: one editorial pull quote at a time */
+.reviews{padding-block:clamp(80px,11vw,160px);text-align:center}
+.rv-in{display:grid;justify-items:center;gap:clamp(22px,3vw,34px)}
+.rv-score{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em}
+.rv-stage{display:grid;width:100%;max-width:980px}
+.rv{grid-area:1/1;margin:0;display:grid;gap:clamp(18px,2.4vw,28px);justify-items:center;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s}
+.rv.on{opacity:1;visibility:visible}
+.rv blockquote{margin:0;font-family:var(--wordmark);font-weight:500;font-size:clamp(1.7rem,3.6vw,3.1rem);line-height:1.15;text-wrap:balance}
+.rv figcaption{font-size:.74rem;text-transform:uppercase;font-weight:600;letter-spacing:.08em}
+.rv-nav{display:flex;gap:10px}
+.rv-dot{width:8px;height:8px;border-radius:50%;border:1px solid var(--ink);background:none;padding:0;cursor:pointer}
+.rv-dot.on{background:var(--ink)}
+.rv-more{font-weight:700;font-size:.78rem;text-transform:uppercase;text-underline-offset:3px}
+
+/* menu on the tray */
+.menu{background:var(--tray);display:grid;place-items:center;padding-block:clamp(40px,6vw,80px);position:relative;overflow:hidden}
+.menu .stage{position:relative;width:min(100%,1080px)}
+.menu .stage img{width:100%;height:auto;-webkit-mask-image:linear-gradient(90deg,transparent,#000 22%,#000 78%,transparent),linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 22%,#000 78%,transparent),linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);mask-composite:intersect}
+.menu .paper{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:38%;aspect-ratio:290/410;background:#F4F3F1;box-shadow:6px 10px 14px -6px rgba(40,44,50,.35);padding:9% 7% 6%;display:grid;grid-template-rows:auto 1fr auto;gap:7%;color:#111;container-type:inline-size}
+.menu h2{font-weight:600;font-size:11.5cqw;letter-spacing:-.01em;text-transform:uppercase;line-height:1}
+.menu dl{display:grid;grid-template-columns:1fr auto;align-content:center;gap:5.5cqw 4cqw;margin:0;font-size:max(12px,5.4cqw);text-transform:uppercase}
+.menu dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;text-transform:none}
+.menu dd small{font-size:.82em;color:#6C665F;margin-right:.35em}
+.menu .book{justify-self:stretch;display:flex;align-items:center;justify-content:center;min-height:max(44px,15cqw);padding:0 6cqw;background:var(--espresso);color:#F4EFE9;text-decoration:none;font-size:max(13px,5.6cqw);text-transform:uppercase;letter-spacing:.06em}
+.menu .book:hover{background:var(--ink)}
+@media (max-width:560px){.menu .paper{width:44%;top:47%}.menu .stage{width:118%;margin-inline:-9%}}
+
+/* full-bleed foam: shampoo About Us overlay */
+.foam{position:relative;min-height:clamp(560px,56vw,860px);overflow:hidden;color:var(--ink)}
+.foam img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.foam::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(244,241,234,.82) 0%,rgba(244,241,234,0) 34%,rgba(244,241,234,0) 66%,rgba(244,241,234,.85) 100%)}
+.foam .in{position:relative;z-index:1;min-height:inherit;display:grid;grid-template-rows:auto 1fr auto;padding-block:clamp(48px,7vw,96px)}
+.foam h2{font-variation-settings:"wdth" 112;font-size:clamp(1.4rem,2.4vw,1.9rem)}
+.foam .small-caps{max-width:42ch;margin-top:12px}
+.foam .r{justify-self:end;text-align:center;max-width:44ch;grid-row:3}
+.foam .panel{background:rgba(244,241,234,.9);padding:clamp(16px,2vw,24px) clamp(18px,2.4vw,28px);max-width:max-content}
+.foam .in>div.panel{justify-self:start}
+
+/* footer */
+footer{padding-block:56px 44px;display:grid;gap:22px;font-size:clamp(.78rem,.9vw,.9rem);text-transform:uppercase}
+@media (min-width:760px){footer{grid-template-columns:2fr 1fr 1fr 1fr;align-items:end}}
+footer .mark{font-family:var(--sans);font-weight:500;font-size:.78rem}
+footer b{display:block;font-weight:600;margin-bottom:4px}
+footer a{text-underline-offset:3px}
+
+/* services page */
+.sv-top{background:var(--grey);color:#141210}
+.sv-top .top-nav{padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px))}
+@media (max-width:600px){.sv-top .top-nav{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
+.sv-hero{display:grid;gap:18px;padding-block:clamp(48px,7vw,110px) clamp(48px,6vw,90px)}
+@media (min-width:900px){.sv-hero{grid-template-columns:1.2fr 1fr;align-items:end;column-gap:6vw}}
+.sv-hero h1{font-variation-settings:"wdth" 118;font-weight:700;font-size:clamp(2.2rem,5vw,4.2rem)}
+.sv-hero .lede{font-size:clamp(.95rem,1.05vw,1.08rem);line-height:1.55;max-width:46ch}
+.sv-hero .act{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.jump{display:flex;flex-wrap:wrap;gap:8px 22px;padding-block:18px;border-bottom:1px solid rgba(17,16,16,.12);font-size:clamp(.76rem,.85vw,.86rem);text-transform:uppercase}
+.jump a{text-decoration:none}.jump a:hover{text-decoration:underline;text-underline-offset:4px}
+.cat{display:grid;gap:clamp(24px,4vw,64px);padding-block:clamp(56px,7vw,110px);border-bottom:1px solid rgba(17,16,16,.12)}
+@media (min-width:900px){.cat{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:start}.cat.flip figure{order:2}}
+.cat figure{margin:0;aspect-ratio:4/5;overflow:hidden;max-width:520px;width:100%}
+@media (min-width:900px){.cat figure{position:sticky;top:24px}}
+.cat figure img{width:100%;height:100%;object-fit:cover}
+.cat .n{font-size:.9rem}
+.cat h2{font-size:clamp(1.8rem,3.4vw,2.8rem);margin-top:4px}
+.cat .note{font-size:clamp(.9rem,1vw,1rem);color:var(--soft);margin-top:12px;max-width:52ch;line-height:1.5}
+.list{list-style:none;margin:clamp(24px,3vw,40px) 0 0;padding:0;border-top:1px solid rgba(17,16,16,.85)}
+.list li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 24px;padding-block:18px;border-bottom:1px solid rgba(17,16,16,.14)}
+.list h3{font-size:clamp(.95rem,1.1vw,1.1rem);font-weight:600;text-transform:uppercase;letter-spacing:.01em}
+.list p{grid-column:1;font-size:clamp(.86rem,.95vw,.95rem);color:var(--soft);line-height:1.45;max-width:56ch}
+.list .pr{grid-column:2;grid-row:1;font-size:clamp(.95rem,1.1vw,1.1rem);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.list .pr small{font-size:.78em;color:var(--soft);margin-right:.3em}
+.list .sub{font-size:.82rem;color:var(--soft);grid-column:1/-1}
+.sv-cta{background:var(--mist);text-align:center;display:grid;justify-items:center;gap:16px;padding-block:clamp(64px,8vw,120px)}
+.sv-cta h2{font-size:clamp(1.8rem,3.6vw,3rem)}
+.sv-cta p{max-width:52ch;font-size:clamp(.95rem,1.05vw,1.08rem);line-height:1.55}
+.sv-cta .act{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:6px}
+.btn-line{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 36px;border:1px solid currentColor;text-decoration:none;font-size:.82rem;text-transform:uppercase}
+.btn-line:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+</style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="bbgold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9b884"/><stop offset=".5" stop-color="#caa46a"/><stop offset="1" stop-color="#b78a4e"/></linearGradient></defs></svg>
-
-<!-- NAV -->
-<div class="navwrap">
-  <header class="site-header">
-    <a href="index.html" class="logo">
-      <svg class="diamond" viewBox="0 0 40 40" aria-hidden="true"><polygon class="d-out" points="20,2 38,20 20,38 2,20"/></svg>
-      <span class="lk"><b>Blinc Blonde</b><small>Highgate · Perth</small></span>
-    </a>
-    <nav class="nav">
-      <a href="services.html" class="desktop-only">Services</a>
-      <a href="index.html#portfolio" class="desktop-only">Portfolio</a>
-      <a href="index.html#studio" class="desktop-only">The Studio</a>
-      <a href="quote.html" class="desktop-only">Instant Quote</a>
-      <a href="https://home.shortcutssoftware.com/blincblonde" target="_blank" rel="noopener" class="btn btn-primary desktop-only">Book <span class="arw">→</span></a>
-      <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-    </nav>
-  </header>
-</div>
-<div class="mobile-nav">
-  <button class="mobile-close" aria-label="Close menu">✕</button>
-  <div class="m-links">
-    <a href="services.html" class="m-link">Services</a>
-    <a href="index.html#portfolio" class="m-link">Portfolio</a>
-    <a href="index.html#studio" class="m-link">The Studio</a>
-    <a href="quote.html" class="m-link">Instant Quote</a>
-    <a href="index.html#contact" class="m-link">Contact</a>
+<header class="sv-top" id="top">
+  <div class="top-nav">
+      <a class="logo" href="./" aria-label="Blinc Blonde home"><svg viewBox="0 0 200 200" role="img" aria-hidden="true"><rect x="38" y="38" width="124" height="124" transform="rotate(45 100 100)" fill="none" stroke="currentColor" stroke-width="2.2"/><text x="100" y="96" text-anchor="middle">BLINC</text><text x="100" y="124" text-anchor="middle">BLONDE</text></svg></a>
+      <nav aria-label="Primary"><a href="services.html">Services</a><a href="./#about">About us</a><a href="https://home.shortcutssoftware.com/blincblonde#/_h/locations/info" target="_blank" rel="noopener">Booking</a><a href="#find">Getting here</a></nav>
   </div>
-  <a href="https://home.shortcutssoftware.com/blincblonde" target="_blank" rel="noopener" class="btn btn-gold m-cta">Book Online <span class="arw">→</span></a>
-  <div class="m-foot">
-    <a href="tel:0862226677">(08) 6222 6677</a>
-    <a href="https://maps.google.com/?q=479+Beaufort+Street+Highgate+WA+6003" target="_blank" rel="noopener">479 Beaufort St, Highgate WA</a>
-    <a href="https://www.instagram.com/blincblonde/" target="_blank" rel="noopener">Instagram → @blincblonde</a>
-  </div>
-</div>
-
-<!-- HERO (contained) -->
-<section class="hero">
-  <div class="hero-frame" style="min-height:clamp(380px,56svh,560px)">
-    <img src="https://blincblonde.com/wp-content/uploads/2022/12/About-Us.jpg" alt="Inside the Blinc Blonde salon, Highgate" fetchpriority="high">
-    <div class="hero-content">
-      <div class="hero-headline">
-        <p class="eyebrow">The Services</p>
-        <h1 class="display" style="font-size:clamp(2.4rem,6vw,4.4rem)">Colour, considered.</h1>
-        <p class="lead">Every service is built around one promise: brighter, healthier-looking hair.</p>
-      </div>
-      <div class="hero-aside">
-        <a href="quote.html" class="btn btn-gold btn-lg">Get an Instant Quote <span class="arw">→</span></a>
-        <a href="https://home.shortcutssoftware.com/blincblonde" target="_blank" rel="noopener" class="tlink" style="color:#fff">Book online <span class="arw">→</span></a>
-      </div>
+  <div class="sv-hero wrap">
+    <h1 class="h">Services &amp; prices</h1>
+    <div>
+      <p class="lede">Every blonde package includes a bond-building treatment and a blow-dry. Prices are a guide: extra long or thick hair may cost more, and we'll always talk you through it before we start.</p>
+      <div class="act"><a class="btn" href="https://home.shortcutssoftware.com/blincblonde#/_h/locations/info" target="_blank" rel="noopener">Book now</a></div>
     </div>
   </div>
-</section>
+</header>
 
-<!-- CREDS -->
-<div class="creds">
-  <div class="wrap">
-    <span class="cred">Highgate, Perth</span><span class="dot"></span>
-    <span class="cred"><b>Aveda</b> Concept Salon</span><span class="dot"></span>
-    <span class="cred">Bond-Building Lightening</span><span class="dot"></span>
-    <span class="cred">Healthy-Hair Philosophy</span>
-  </div>
-</div>
+<main>
+  <nav class="jump wrap" aria-label="Service categories"><a href="#blonde">Blonde packages</a><a href="#colour">Colour packages</a><a href="#correction">Global blonding &amp; correction</a><a href="#cuts">Cuts &amp; styling</a><a href="#extras">Add-ons</a></nav>
 
-<!-- INTRO -->
-<section class="section-sm statement">
-  <div class="wrap center">
-    <p class="big measure mx-auto reveal">We don't hand you a price list and a chair. We listen, we plan, we protect your hair — <em>then</em> we make it beautiful.</p>
-  </div>
-</section>
-
-<!-- SERVICE BLOCKS -->
-<section class="section" style="padding-top:clamp(36px,5vw,80px)">
-  <div class="wrap">
-
-    <div class="svc-block reveal">
-      <div class="svc-block-media"><img src="https://blincblonde.com/wp-content/uploads/2022/09/Platinum.png" alt="Bright platinum blonde" loading="lazy"></div>
-      <div>
-        <span class="ix">01 — Signature Blonde</span>
-        <h2 style="margin:12px 0 16px">Bright Blonde Refresh</h2>
-        <p class="lead">For blondes who want luminous, head-turning brightness — without sacrificing condition. Full-head lightening, hand-finished toning and a bond-protecting treatment in every visit.</p>
-        <div class="svc-detail">
-          <div class="cell"><span class="k">Estimated Investment</span><span class="v"><span class="invest">$220–$380</span></span></div>
-          <div class="cell"><span class="k">Maintenance</span><span class="v">Every 8–10 weeks</span></div>
-          <div class="cell"><span class="k">Time in Salon</span><span class="v">Around 3 hours</span></div>
-          <div class="cell"><span class="k">Finish</span><span class="v">Bright · creamy · glossy</span></div>
-        </div>
-        <span class="lbl-mini">Recommended for</span>
-        <div class="chips"><span class="chip">Existing blondes</span><span class="chip">High-impact brightness</span><span class="chip">Special occasions</span></div>
-        <a href="quote.html" class="tlink" style="margin-top:26px">Estimate this for my hair <span class="arw">→</span></a>
-      </div>
+  <section class="cat wrap" id="blonde">
+    <figure><img src="img/babylights.jpg" alt="Fine blonde highlights through a beige base"></figure>
+    <div>
+      <span class="n">01</span>
+      <h2 class="h">Blonde packages</h2>
+      <p class="note">Our speciality. Each package includes toner, a bond-building treatment, blow-dry and style.</p>
+      <ul class="list">
+          <li><h3>Mini blonde refresh</h3><span class="pr"><small>from</small>$330</span><p>Quarter-head highlights and toner. Root shadow +$20.</p></li>
+          <li><h3>Blonde &amp; balayage refresh</h3><span class="pr"><small>from</small>$370</span><p>Half-head foils or balayage refresh (balayage +$20) and toner. Root shadow +$20.</p></li>
+          <li><h3>Blonde transformation</h3><span class="pr"><small>from</small>$420</span><p>Full-head foils and toner.</p></li>
+          <li><h3>Full balayage / lived in</h3><span class="pr"><small>from</small>$445</span><p>Custom full-head foils or balayage, with a root melt or multiple toners.</p></li>
+          <li><h3>On-scalp blonde refresh</h3><span class="pr"><small>from</small>$320</span><p>For up to 8 weeks of regrowth. On-scalp lightening and toner.</p></li>
+      </ul>
     </div>
+  </section>
 
-    <div class="svc-block reveal">
-      <div class="svc-block-media"><img src="https://blincblonde.com/wp-content/uploads/2022/09/Beach-Blonde-679x1024.jpg" alt="Lived-in beach balayage" loading="lazy"></div>
-      <div>
-        <span class="ix">02 — Low Maintenance</span>
-        <h2 style="margin:12px 0 16px">Lived-In Balayage</h2>
-        <p class="lead">Soft, sun-kissed dimension painted by hand to grow out seamlessly. The most natural — and lowest-upkeep — way to be blonde, finished with a custom gloss.</p>
-        <div class="svc-detail">
-          <div class="cell"><span class="k">Estimated Investment</span><span class="v"><span class="invest">$140–$280</span></span></div>
-          <div class="cell"><span class="k">Maintenance</span><span class="v">Every 10–14 weeks</span></div>
-          <div class="cell"><span class="k">Time in Salon</span><span class="v">2.5–4 hours</span></div>
-          <div class="cell"><span class="k">Finish</span><span class="v">Natural · grown-in · soft</span></div>
-        </div>
-        <span class="lbl-mini">Recommended for</span>
-        <div class="chips"><span class="chip">Natural blondes</span><span class="chip">Low maintenance</span><span class="chip">First-time colour</span></div>
-        <a href="quote.html" class="tlink" style="margin-top:26px">Estimate this for my hair <span class="arw">→</span></a>
-      </div>
+  <section class="cat wrap flip" id="colour">
+    <figure><img src="img/balayage.jpg" alt="Lived-in balayage waves from behind"></figure>
+    <div>
+      <span class="n">02</span>
+      <h2 class="h">Colour packages</h2>
+      <p class="note">Every colour package includes a blow-dry and style.</p>
+      <ul class="list">
+          <li><h3>Colour maintenance</h3><span class="pr"><small>from</small>$175</span><p>Regrowth tint.</p></li>
+          <li><h3>Full colour refresh</h3><span class="pr"><small>from</small>$205</span><p>Regrowth tint with semi or gloss through the ends, or semi all over.</p><span class="sub">Long hair from $225</span></li>
+          <li><h3>Mini foils + full colour refresh</h3><span class="pr">$260</span><p>Up to 15 fashion foils with full colour between, toner and a bond-building treatment.</p><span class="sub">Upgrade to quarter-head highlights +$100</span></li>
+      </ul>
     </div>
+  </section>
 
-    <div class="svc-block reveal">
-      <div class="svc-block-media"><img src="https://blincblonde.com/wp-content/uploads/2022/09/Baby-lights.png" alt="Baby lights and fine foils" loading="lazy"></div>
-      <div>
-        <span class="ix">03 — Dimension</span>
-        <h2 style="margin:12px 0 16px">Baby Lights &amp; Fine Foils</h2>
-        <p class="lead">Delicate, finely-woven highlights that add a 3D, multi-tonal effect and the illusion of fuller hair. From subtle face-framing to a full head of brightness.</p>
-        <div class="svc-detail">
-          <div class="cell"><span class="k">Estimated Investment</span><span class="v"><span class="invest">$119–$229</span></span></div>
-          <div class="cell"><span class="k">Maintenance</span><span class="v">Every 8–12 weeks</span></div>
-          <div class="cell"><span class="k">Time in Salon</span><span class="v">2–3.5 hours</span></div>
-          <div class="cell"><span class="k">Finish</span><span class="v">Multi-dimensional · full</span></div>
-        </div>
-        <span class="lbl-mini">Recommended for</span>
-        <div class="chips"><span class="chip">Finer hair</span><span class="chip">Subtle dimension</span><span class="chip">Face framing</span></div>
-        <a href="quote.html" class="tlink" style="margin-top:26px">Estimate this for my hair <span class="arw">→</span></a>
-      </div>
+  <section class="cat wrap" id="correction">
+    <figure><img src="img/silver.jpg" alt="Dark root melting into silver ends"></figure>
+    <div>
+      <span class="n">03</span>
+      <h2 class="h">Global blonding &amp; colour correction</h2>
+      <p class="note">Big changes are planned, not rushed. A consultation is required first, and we quote in person, not over the phone or email.</p>
+      <ul class="list">
+          <li><h3>Global blonding &amp; colour correction</h3><span class="pr">$120 / hour</span><p>Full corrective blonding or global lightening, multiple toners or root melts as needed, a bond-building treatment, blow-dry and style.</p></li>
+      </ul>
     </div>
+  </section>
 
-    <div class="svc-block reveal">
-      <div class="svc-block-media"><img src="https://blincblonde.com/wp-content/uploads/2022/09/Beige.png" alt="Root retouch and gloss" loading="lazy"></div>
-      <div>
-        <span class="ix">04 — Upkeep</span>
-        <h2 style="margin:12px 0 16px">Root Retouch &amp; Gloss</h2>
-        <p class="lead">The in-between appointment that keeps your colour salon-fresh: a regrowth retouch and a custom toning gloss to neutralise brass and restore shine.</p>
-        <div class="svc-detail">
-          <div class="cell"><span class="k">Estimated Investment</span><span class="v"><span class="invest">$60–$189</span></span></div>
-          <div class="cell"><span class="k">Maintenance</span><span class="v">Every 4–8 weeks</span></div>
-          <div class="cell"><span class="k">Time in Salon</span><span class="v">1–2 hours</span></div>
-          <div class="cell"><span class="k">Finish</span><span class="v">Refreshed · toned · glossy</span></div>
-        </div>
-        <span class="lbl-mini">Recommended for</span>
-        <div class="chips"><span class="chip">Maintaining colour</span><span class="chip">Brass control</span><span class="chip">Shine boost</span></div>
-        <a href="quote.html" class="tlink" style="margin-top:26px">Estimate this for my hair <span class="arw">→</span></a>
-      </div>
+  <section class="cat wrap flip" id="cuts">
+    <figure><img src="img/bridal.jpg" alt="Bride with a soft low chignon"></figure>
+    <div>
+      <span class="n">04</span>
+      <h2 class="h">Cuts, styling &amp; finishing</h2>
+      
+      <ul class="list">
+          <li><h3>Wash, cut &amp; blow-dry</h3><span class="pr">$109</span></li>
+          <li><h3>Curly cut &amp; styling</h3><span class="pr">$130</span><p>Includes specialty curl styling.</p></li>
+          <li><h3>Men's cut &amp; style</h3><span class="pr">$65</span></li>
+          <li><h3>Blow-dry &amp; style</h3><span class="pr"><small>from</small>$70</span><p>Short $70, medium $80, long $90.</p></li>
+          <li><h3>Hair up</h3><span class="pr">$109</span></li>
+          <li><h3>Bridal styling</h3><span class="pr">On request</span><p>In salon or on location. Get in touch to talk through your day.</p></li>
+      </ul>
     </div>
+  </section>
 
-    <div class="svc-block reveal">
-      <div class="svc-block-media"><img src="https://blincblonde.com/wp-content/uploads/2022/09/Dirty-Brunettte.png" alt="Cut and style finish" loading="lazy"></div>
-      <div>
-        <span class="ix">05 — Cut &amp; Style</span>
-        <h2 style="margin:12px 0 16px">Cut, Style &amp; Blow-Dry</h2>
-        <p class="lead">A precision cut tailored to your hair's texture and the way you actually wear it, finished with an Aveda wash ritual and a flawless blow-dry.</p>
-        <div class="svc-detail">
-          <div class="cell"><span class="k">Estimated Investment</span><span class="v"><span class="invest">$49–$119</span></span></div>
-          <div class="cell"><span class="k">Maintenance</span><span class="v">Every 6–10 weeks</span></div>
-          <div class="cell"><span class="k">Time in Salon</span><span class="v">45 min–1.5 hours</span></div>
-          <div class="cell"><span class="k">Finish</span><span class="v">Polished · wearable</span></div>
-        </div>
-        <span class="lbl-mini">Recommended for</span>
-        <div class="chips"><span class="chip">Wash, cut &amp; blow-dry</span><span class="chip">Blow-dry only</span><span class="chip">Men's cuts</span></div>
-        <a href="https://home.shortcutssoftware.com/blincblonde" target="_blank" rel="noopener" class="tlink" style="margin-top:26px">Book a cut <span class="arw">→</span></a>
-      </div>
+  <section class="cat wrap" id="extras" style="grid-template-columns:1fr">
+    <div>
+      <span class="n">05</span>
+      <h2 class="h">Add-ons &amp; extras</h2>
+      <ul class="list">
+          <li><h3>Add a cut to any colour package</h3><span class="pr">+$35</span></li>
+          <li><h3>Tip outs between highlights</h3><span class="pr">$70</span></li>
+          <li><h3>Extra long or thick hair</h3><span class="pr">Discussed upfront</span><p>May incur an additional charge.</p></li>
+      </ul>
     </div>
+  </section>
 
-    <div class="svc-block reveal">
-      <div class="svc-block-media"><img src="https://blincblonde.com/wp-content/uploads/2023/03/Blinc-Blond-Wedding.png" alt="Bridal hair by Blinc Blonde" loading="lazy"></div>
-      <div>
-        <span class="ix">06 — Weddings &amp; Events</span>
-        <h2 style="margin:12px 0 16px">Bridal &amp; Occasion Hair</h2>
-        <p class="lead">One of Perth's most sought-after bridal teams. From an intimate in-salon style to a full wedding party on location — we've travelled as far as Fiji and Bali. Begin with a complimentary consultation.</p>
-        <div class="svc-detail">
-          <div class="cell"><span class="k">In Salon — Bride</span><span class="v"><span class="invest">$120</span></span></div>
-          <div class="cell"><span class="k">On Location — Bride</span><span class="v"><span class="invest">$155</span></span></div>
-          <div class="cell"><span class="k">Bridal Party</span><span class="v">From $100 per person</span></div>
-          <div class="cell"><span class="k">Trial (1.5h)</span><span class="v">$150</span></div>
-        </div>
-        <span class="lbl-mini">Recommended for</span>
-        <div class="chips"><span class="chip">Brides</span><span class="chip">Bridal parties</span><span class="chip">Destination weddings</span></div>
-        <a href="https://home.shortcutssoftware.com/blincblonde" target="_blank" rel="noopener" class="tlink" style="margin-top:26px">Enquire about bridal <span class="arw">→</span></a>
-      </div>
-    </div>
+  <section class="sv-cta wrap">
+    <h2 class="h">Not sure what to book?</h2>
+    <p>Book the closest package and your colourist will confirm the plan and the price before anything starts. For big changes, start with a consultation.</p>
+    <div class="act"><a class="btn" href="https://home.shortcutssoftware.com/blincblonde#/_h/locations/info" target="_blank" rel="noopener">Book now</a><a class="btn-line" href="#find">Call the salon</a></div>
+  </section>
+</main>
 
-  </div>
-</section>
-
-<!-- QUOTE BAND -->
-<section style="padding:clamp(20px,4vw,40px) var(--gutter)">
-  <div class="quoteband-frame">
-    <div class="quoteband-bg"><img src="https://blincblonde.com/wp-content/uploads/2022/12/Amy-working.jpg" alt="Colour being applied at Blinc Blonde" loading="lazy"></div>
-    <div class="inner quoteband">
-      <p class="eyebrow">A note on pricing</p>
-      <h2>Get your exact figure in 60 seconds.</h2>
-      <p>Colour is always quoted to your individual hair — length, thickness, density and history all play a part. That's exactly what our quote tool accounts for, so you walk in knowing what to expect.</p>
-      <a href="quote.html" class="btn btn-gold btn-lg">Get My Estimate <span class="arw">→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section">
-  <div class="wrap">
-    <div class="sec-head center reveal"><span class="eyebrow dual">Good to Know</span><h2>Service FAQs</h2></div>
-    <div class="faq reveal d1">
-      <div class="faq-item"><button class="faq-q">Why is colour quoted as a range? <span class="ico"></span></button><div class="faq-a"><div class="pad">Two clients booking the “same” service can need very different amounts of product and time depending on length, thickness and colour history. Ranges keep us honest — your specialist confirms the exact figure at consultation.</div></div></div>
-      <div class="faq-item"><button class="faq-q">Do you charge a consultation fee? <span class="ico"></span></button><div class="faq-a"><div class="pad">For large colour changes, extensions and weddings we take a $50 consultation fee, credited toward your booking. Quick colour quotes are free — start with our online quote tool.</div></div></div>
-      <div class="faq-item"><button class="faq-q">What products do you use? <span class="ico"></span></button><div class="faq-a"><div class="pad">We're an Aveda Concept Salon, using naturally-derived colour and care that protects condition and shine, paired with bond-building treatments for every lightening service.</div></div></div>
-      <div class="faq-item"><button class="faq-q">Can a big change happen in one visit? <span class="ico"></span></button><div class="faq-a"><div class="pad">Sometimes — but if reaching your goal in a single session would compromise your hair, we'll map out a safe plan across visits. Healthy hair always comes first.</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site-footer" id="contact">
-  <div class="wrap">
-    <div class="footer-top">
-      <div class="logo-stack">
-        <svg class="diamond" viewBox="0 0 40 40" aria-hidden="true"><polygon class="d-out" points="20,2 38,20 20,38 2,20"/></svg>
-        <span class="name">Blinc Blonde</span>
-      </div>
-      <p>Perth's blonde &amp; colour specialists. Beautiful colour, genuinely healthy hair and a luxury salon experience in the heart of Highgate.</p>
-      <a href="https://home.shortcutssoftware.com/blincblonde" target="_blank" rel="noopener" class="btn btn-gold">Book an Appointment <span class="arw">→</span></a>
-    </div>
-    <div class="footer-grid">
-      <div class="footer-col"><p class="h">Explore</p><a href="services.html">Services</a><a href="index.html#portfolio">Portfolio</a><a href="quote.html">Instant Quote</a><a href="index.html#studio">The Studio</a><a href="index.html#reviews">Reviews</a></div>
-      <div class="footer-col"><p class="h">Visit</p><a href="https://maps.google.com/?q=479+Beaufort+Street+Highgate+WA+6003" target="_blank" rel="noopener">479 Beaufort Street<br>Highgate WA 6003</a><a href="tel:0862226677">(08) 6222 6677</a><a href="https://www.instagram.com/blincblonde/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/blincblonde/" target="_blank" rel="noopener">Facebook</a></div>
-      <div class="footer-col"><p class="h">Opening Hours</p><ul class="footer-hours"><li><span>Mon–Tue</span><span>9 – 5.30</span></li><li><span>Wed</span><span>9 – 7.30</span></li><li><span>Thu</span><span>9 – 9</span></li><li><span>Fri</span><span>9 – 5.30</span></li><li><span>Sat</span><span>8 – 3.30</span></li><li><span>Sun</span><span>Closed</span></li></ul></div>
-    </div>
-    <div class="footer-bottom"><span>© 2026 Blinc Blonde · Highgate, Perth</span><span>Aveda Concept Salon · “One of Perth's Best” — The Urban List</span></div>
-  </div>
+<p class="wordmark wrap" aria-hidden="true"><span id="wm">Blinc Blonde</span></p>
+<footer class="wrap" id="find">
+  <div class="mark">Mt Lawley, Perth</div>
+  <div><b>Getting here</b>479 Beaufort Street<br>Highgate WA 6003</div>
+  <div><b>Contact us</b>(08) 6222 6677</div>
+  <div><b>Follow</b><a href="https://www.instagram.com/blincblonde/" target="_blank" rel="noopener">@blincblonde</a><br><a href="https://theserviceedit.com" target="_blank" rel="noopener" style="text-transform:none">Site by The Service Edit</a></div>
 </footer>
-<div class="mbook"><a href="https://home.shortcutssoftware.com/blincblonde" target="_blank" rel="noopener" class="btn btn-primary">Book an Appointment <span class="arw">→</span></a></div>
-<script src="assets/app.js"></script>
+
+<script>
+(function(){
+  var wm=document.getElementById('wm');
+  function fit(){ var box=wm.parentElement, cs=getComputedStyle(box); var avail=box.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight); box.style.fontSize='100px'; var w=wm.getBoundingClientRect().width; if(w>0) box.style.fontSize=(100*avail/w*0.995)+'px'; }
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit)} fit(); window.addEventListener('resize',fit);
+})();
+</script>
 </body>
 </html>
